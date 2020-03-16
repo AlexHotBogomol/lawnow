@@ -1,38 +1,143 @@
-.App {
+.ant-carousel{
+  padding-bottom: 70px;
+}
+.ant-carousel .slick-slide {
   text-align: center;
+  overflow: hidden;
+  padding: 0 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-carousel .slick-slide p {
+  color: var(--black-color);
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-top: 5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ant-carousel .slick-list {
+  margin: 0 -18px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ant-carousel .slick-dots-bottom{
+  bottom: -60px;
+}
+.ant-carousel .slick-dots li{
+  width: 2rem;
+  height: 6px;
+}
+.ant-carousel .slick-list .slick-slide {
+  pointer-events: initial;
+}
+.ant-carousel .slick-dots li.slick-active{
+  width: 3rem
+}
+.ant-carousel .slick-dots li button{
+  background: var(--secondary-color);
+  opacity: 1;
+  height: 6px;
+  border-radius: 1px;
+  font-size: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  line-height: 39px;
+}
+.ant-carousel .slick-dots li.slick-active button{
+  background: var(--accent-color);
+  color: var(--accent-color);
 }
 
-.App-link {
-  color: #61dafb;
+label{
+  color: var(--black-color);
+  padding-bottom: 5px;
+  display: inline-block;
+  padding-top: 12px;
+}
+.description{
+  font-size: 1rem;
+  color: var(--black-color);
+  line-height: 1.5;
+  padding-bottom: 25px;
+  padding-top: 35px;
+  margin-bottom: 0;
+}
+.required-info{
+  color: var(--error-color);
+  margin-bottom: 0;
+  line-height: 1.5;
+  padding-bottom: 35px;
+}
+.description-info{
+  padding-top: 40px;
+  padding-bottom: 80px;
+  margin-bottom: 0;
+  color: var(--black-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.ant-collapse{
+  background: transparent;
+}
+.ant-collapse-borderless > .ant-collapse-item{
+  border: none;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header{
+  color: var(--accent-color);
+  text-decoration: underline;
+  padding-left: 20px;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:before{
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--secondary-color);
+  width: 85%;
+  position: absolute;
+  top:50%;
+  left: 15%;
+  transition: 0.5s ease-in-out;
+}
+.ant-collapse > .ant-collapse-item.ant-collapse-item-active > .ant-collapse-header:before{
+  width: 0;
+}
+.ant-collapse-content > .ant-collapse-content-box{
+  padding: 0;
+}
+.ant-collapse-content > .ant-collapse-content-box .ant-col{
+  position: relative;
+}
+.ant-collapse-content > .ant-collapse-content-box .ant-col:before {
+  content: '';
+  display: block;
+  height: 100%;
+  background: var(--secondary-color);
+  width: 1px;
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+.ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content{
+  padding-bottom: 20px;
+}
+.ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow{
+  left: 0;
+}
+.warning{
+  font-size: 0.875rem;
+  line-height: 21px;
+  color: var(--warning-color);
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-error, .select-error .ant-select-selector{
+  border-color: var(--error-color);
+}
+
+.message-error{
+  color: var(--error-color);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding-top: 5px;
 }
