@@ -1,0 +1,153 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.modal-window {
+  width: 884px;
+  max-width: 80%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+.modal-closeBtn {
+  cursor: pointer;
+  border: none;
+  position: absolute;
+  display: block;
+  padding: 5px;
+  right: 16px;
+  top: 16px;
+  font-size: 30px;
+  line-height: 24px;
+  transition: 0.2s;
+  z-index: 100;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.6487 12L21.9397 2.40184C22.0787 2.24233 21.9618 2 21.7471 2H19.2266C19.0782 2 18.936 2.06442 18.8381 2.17485L12 10.092L5.16189 2.17485C5.06714 2.06442 4.92501 2 4.7734 2H2.25293C2.03815 2 1.92129 2.24233 2.06026 2.40184L10.3513 12L2.06026 21.5982C2.02913 21.6337 2.00916 21.6772 2.00272 21.7234C1.99628 21.7697 2.00363 21.8168 2.02392 21.8591C2.04421 21.9014 2.07657 21.9372 2.11716 21.9621C2.15775 21.9871 2.20488 22.0003 2.25293 22H4.7734C4.92185 22 5.06398 21.9356 5.16189 21.8251L12 13.908L18.8381 21.8251C18.9329 21.9356 19.075 22 19.2266 22H21.7471C21.9618 22 22.0787 21.7577 21.9397 21.5982L13.6487 12Z' fill='%23232018'/%3E%3C/svg%3E%0A");
+}
+.modal-closeBtn:focus {
+  outline: none;
+}
+.modal-content{
+    padding: 60px 130px 72px;
+}
+.modal-title{
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    padding-bottom: 35px;
+  margin-bottom: 0;
+}
+.modal-description{
+  padding: 0 30px 40px;
+  font-size: 1rem;
+  color: var(--black-color);
+}
+.modal-btnWrapper{
+  text-align: center;
+}
+.modal-btn{
+  width: 320px;
+  max-width: 100%;
+}
+.modal-icon{
+  text-align: center;
+  padding-bottom: 35px;
+}
+
+.checkMark{
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkMark-bg{
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: var(--accent2-color);
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkMark-item{
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-width: 5px;
+  stroke: var(--black-color);
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes scale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 30px var(--accent2-color);
+  }
+}
+
+@media only screen
+and (max-width: 1199px){
+  .modal-window{
+    top: 20px;
+  }
+}
+
+@media only screen
+and (max-width: 991px){
+  .modal-content {
+    padding: 50px;
+  }
+}
+
+@media only screen
+and (max-width: 767px){
+  .modal-description{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .modal-icon{
+    padding-bottom: 15px;
+  }
+  .modal-content {
+    padding: 40px 20px;
+  }
+  .modal-description{
+    padding-bottom: 10px;
+  }
+  .modal-title{
+    font-size: 1.5rem;
+  }
+}

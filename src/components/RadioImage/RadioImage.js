@@ -1,7 +1,7 @@
 import React from "react";
 import "./RadioImage.css";
 
-const RadioImage = ({ name, id, value, onChangeRadioImage, checked, index}) => {
+const RadioImage = ({ name, id, value, onChangeRadioImage, checked, index, image}) => {
   return (
     <>
       <input
@@ -16,7 +16,7 @@ const RadioImage = ({ name, id, value, onChangeRadioImage, checked, index}) => {
         checked={!!checked}
       />
       <label className="radioImage-label" htmlFor={id}>
-        <img src="//placekitten.com/160/160" alt="I'm sad" />
+        {image}
       </label>
       <p>{value}</p>
     </>

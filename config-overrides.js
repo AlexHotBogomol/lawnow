@@ -14,6 +14,7 @@ module.exports = override(
          '@black' : '#232018',
          '@font-size-base' : '16px',
          '@border-radius-base' : '4px',
+         '@input-height-base' : '40px',
        },
   }),
 );

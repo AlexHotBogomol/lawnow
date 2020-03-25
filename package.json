@@ -7,15 +7,21 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "antd": "^4.0.2",
+    "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.9.1",
+    "disable-scroll": "^0.5.1",
+    "german-postal-codes": "^1.18.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
+    "moment": "^2.24.0",
     "react": "^16.13.0",
     "react-app-rewired": "^2.1.5",
     "react-dom": "^16.13.0",
     "react-hook-form": "^5.0.3",
-    "react-scripts": "3.4.0"
+    "react-html-parser": "^2.0.2",
+    "react-scripts": "3.4.0",
+    "react-transition-group": "^4.3.0"
   },
   "scripts": {
     "start": "react-app-rewired start",

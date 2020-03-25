@@ -14,6 +14,9 @@ code {
 
 :root {
   --accent-color: #1794FC;
+  --accent2-color: #FFCC00;
+  --comment-color: #8C8C8C;
+  --btn-color: #232018;
   --normal-color: #BFBFBF;
   --secondary-color: #E8E8E8;
   --black-color: #262626;
