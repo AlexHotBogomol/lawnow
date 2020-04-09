@@ -7,11 +7,12 @@ import {
   Col,
   Select,
   DatePicker,
-  Carousel,
-  Collapse,
+  Collapse
 } from "antd";
 import { InfoCircleFilled } from "@ant-design/icons";
 import { useForm, Controller } from "react-hook-form";
+import customValidations from "../utils/customValidation";
+import MaskedInput from "antd-mask-input";
 import RadioImage from "../components/RadioImage/RadioImage";
 import Required from "../components/Required/Required";
 import errorMessages from "../utils/errorMessages";
@@ -31,9 +32,10 @@ import Img6 from "../icons/illustrations/Img6";
 import Img7 from "../icons/illustrations/Img7";
 import Img8 from "../icons/illustrations/Img8";
 import Img9 from "../icons/illustrations/Img9";
+import versicherungOprions from "../utils/versicherung";
 
 import axios from "axios";
-const API_PATH = "http://lawnow.ein-des-ein.com/api/contact/person.php";
+const API_PATH = "/api/contact/person.php";
 
 // import codes from "german-postal-codes";
 //
@@ -42,19 +44,18 @@ const API_PATH = "http://lawnow.ein-des-ein.com/api/contact/person.php";
 const { Option } = Select;
 const { Panel } = Collapse;
 
-const Person = ({onOpenModal}) => {
+const Person = ({ onOpenModal }) => {
   const {
     handleSubmit,
     control,
     watch,
     setValue,
-    register,
-    errors,
+    errors
   } = useForm();
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    console.log(data);
+    // console.log(data);
     axios({
       method: "post",
       url: `${API_PATH}`,
@@ -70,9 +71,14 @@ const Person = ({onOpenModal}) => {
   };
 
   useEffect(() => {
-    const firstErrorInput = document.querySelector('.input-error');
-    if(firstErrorInput){
+    const firstErrorInput = document.querySelector(".input-error");
+    if (firstErrorInput && firstErrorInput.classList.contains("ant-input")) {
       firstErrorInput.focus();
+    } else if (
+      firstErrorInput &&
+      !firstErrorInput.classList.contains("ant-input")
+    ) {
+      firstErrorInput.querySelector("input").focus();
     }
   }, [errors]);
 
@@ -90,38 +96,7 @@ const Person = ({onOpenModal}) => {
     setPanelState(state);
   };
 
-  // slider with radio
-  const sliderSettings = {
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    draggable: true,
-    infinite: false,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
-
-  const [checkedRadioImageIndex, SetCheckedRadioImageIndex] = useState(0);
+  const [checkedRadioImageIndex, SetCheckedRadioImageIndex] = useState(null);
 
   const onChangeRadioImage = (value, index) => {
     setValue("Unfalldaten.Unfallart", value);
@@ -131,65 +106,176 @@ const Person = ({onOpenModal}) => {
   const RadioImages = [
     {
       id: "first",
-      value: "1. Auffahrunfall",
+      value: "Auffahrunfall",
       image: <Img1 />
     },
     {
       id: "second",
-      value: "2. Vorfahrtsverstoß / Rechts vor Links",
+      value: "Vorfahrtsverstoß / Rechts vor Links",
       image: <Img2 />
     },
     {
       id: "third",
-      value: "3. Anfahren vom Fahrbahnrand Einfahren in den fließenden Verkehr",
+      value: "Anfahren vom Fahrbahnrand Einfahren in den fließenden Verkehr",
       image: <Img3 />
     },
     {
       id: "fourth",
-      value: "4. Unfall zwischen Überholer und vorausfahrendem Linksabbieger",
+      value: "Unfall zwischen Überholer und vorausfahrendem Linksabbieger",
       image: <Img4 />
     },
     {
       id: "fifth",
-      value: "5. Unfall aufgrund Spurwechsel des Unfallgegners",
+      value: "Unfall aufgrund Spurwechsel des Unfallgegners",
       image: <Img5 />
     },
     {
       id: "sixth",
-      value: "6. Unfall mit einem rückwärtsfahrenden Fahrzeug",
+      value: "Unfall mit einem rückwärtsfahrenden Fahrzeug",
       image: <Img6 />
     },
     {
       id: "seventh",
-      value: "7. Unfall auf Parkplatz mit Rückwärtsausparker",
+      value: "Unfall auf Parkplatz mit Rückwärtsausparker",
       image: <Img7 />
     },
     {
       id: "eighth",
-      value:
-        "8. Touchieren des Fahrzeugs beim Ein-/Ausparken auch auf Parkplatz",
+      value: "Touchieren des Fahrzeugs beim Ein-/Ausparken auch auf Parkplatz",
       image: <Img8 />
     },
     {
       id: "ninth",
-      value: "9. Unfall durch entgegenkommendes Fahrzeug (Begegnungsunfall)",
+      value: "Unfall durch entgegenkommendes Fahrzeug (Begegnungsunfall)",
       image: <Img9 />
     }
   ];
 
-  useEffect(() => {
-    register({
-      name: "Unfalldaten.Unfallart",
-      value: RadioImages[checkedRadioImageIndex].value
-    });
-  }, [register]);
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} action="#">
       <Row>
+        <Col span={24}>
+          <label htmlFor="Unfalldaten.Rechtsschutzversicherer">
+            1. Ihr Rechtsschutzversicherer <Required />
+          </label>
+          <Controller
+            as={
+              <Select
+                placeholder="Ihr Rechtsschutzversicherer"
+                style={{ width: "100%" }}
+                className={
+                  errors.Unfalldaten &&
+                  errors.Unfalldaten.Rechtsschutzversicherer &&
+                  "input-error"
+                }
+                showSearch={true}
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  option.children.toLowerCase().indexOf(input.toLowerCase()) === 0
+                }
+              >
+                <Option value="Advocard">Advocard</Option>
+                <Option value="Allianz Deutschland AG">
+                  Allianz Deutschland AG
+                </Option>
+                <Option value="Allrecht">Allrecht</Option>
+                <Option value="Arag">Arag</Option>
+                <Option value="Auxilia Rechtsschutz">
+                  Auxilia Rechtsschutz
+                </Option>
+                <Option value="BGV Badische Versicherungen">
+                  BGV Badische Versicherungen
+                </Option>
+                <Option value="Bruderhilfe">Bruderhilfe</Option>
+                <Option value="Concordia">Concordia</Option>
+                <Option value="Continentale">Continentale</Option>
+                <Option value="DA Deutsche Allgemeine">
+                  DA Deutsche Allgemeine
+                </Option>
+                <Option value="D.A.S. Deutscher Automobil Schutz">
+                  D.A.S. Deutscher Automobil Schutz
+                </Option>
+                <Option value="Debeka">Debeka</Option>
+                <Option value="Deurag">Deurag</Option>
+                <Option value="DEVK">DEVK</Option>
+                <Option value="DFV Deutsche Familienversicherung AG">
+                  DFV Deutsche Familienversicherung AG
+                </Option>
+                <Option value="Verti Versicherung AG">
+                  Verti Versicherung AG
+                </Option>
+                <Option value="DMB">DMB</Option>
+                <Option value="GVO Gegenseitigkeit">GVO Gegenseitigkeit</Option>
+                <Option value="HDI-Gerling Firmen und Privat">
+                  HDI-Gerling Firmen und Privat
+                </Option>
+                <Option value="HDI Versicherung AG">HDI Versicherung AG</Option>
+                <Option value="Huk24 AG">Huk24 AG</Option>
+                <Option value="Huk-Coburg">Huk-Coburg</Option>
+                <Option value="Itzehoer Versicherung">
+                  Itzehoer Versicherung
+                </Option>
+                <Option value="Jurpartner">Jurpartner</Option>
+                <Option value="LVM">LVM</Option>
+                <Option value="Mecklenburgische">Mecklenburgische</Option>
+                <Option value="Medien-Versicherung a.G.">
+                  Medien-Versicherung a.G.
+                </Option>
+                <Option value="Neue Rechtsschutz">Neue Rechtsschutz</Option>
+                <Option value="Örag">Örag</Option>
+                <Option value="Roland">Roland</Option>
+                <Option value="R+V">R+V</Option>
+                <Option value="VGH – Versicherungen">
+                  VGH – Versicherungen
+                </Option>
+                <Option value="WGV-Versicherung AG">WGV-Versicherung AG</Option>
+                <Option value="Württembergische">Württembergische</Option>
+              </Select>
+            }
+            control={control}
+            name="Unfalldaten.Rechtsschutzversicherer"
+            id="Unfalldaten.Rechtsschutzversicherer"
+            rules={{
+              required: errorMessages.required
+            }}
+          />
+          {errors.Unfalldaten && errors.Unfalldaten.Rechtsschutzversicherer && (
+            <span className="message-error">
+              {errors.Unfalldaten.Rechtsschutzversicherer.message}
+            </span>
+          )}
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <label htmlFor="Unfalldaten.Versicherungsscheinnummer">
+            2. Versicherungsscheinnummer
+          </label>
+          <Controller
+            as={<Input placeholder="Versicherungsscheinnummer" />}
+            control={control}
+            name="Unfalldaten.Versicherungsscheinnummer"
+            id="Unfalldaten.Versicherungsscheinnummer"
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col span={24}>
+          <label htmlFor="Unfalldaten.Schadennummer">
+            3. Schadennummer / Leistungsnummer
+          </label>
+          <Controller
+            as={<Input placeholder="Schadennummer / Leistungsnummer" />}
+            control={control}
+            name="Unfalldaten.Schadennummer"
+            id="Unfalldaten.Schadennummer"
+          />
+        </Col>
+      </Row>
+      <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
           <label htmlFor="Unfalldaten.Geschlecht">
-            1. Geschlecht <Required />
+            4. Geschlecht <Required />
           </label>
           <Controller
             as={
@@ -232,7 +318,7 @@ const Person = ({onOpenModal}) => {
       <Row gutter={32}>
         <Col xs={{ span: 24 }} sm={{ span: 12 }}>
           <label htmlFor="Unfalldaten.Vorname">
-            2. Vorname <Required />
+            5. Vorname <Required />
           </label>
           <Controller
             as={
@@ -253,6 +339,10 @@ const Person = ({onOpenModal}) => {
               minLength: {
                 value: 2,
                 message: errorMessages.minLength("Vorname")
+              },
+              pattern: {
+                value: /^[A-Za-z \u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]+$/i,
+                message: errorMessages.specialChars()
               }
             }}
           />
@@ -264,7 +354,7 @@ const Person = ({onOpenModal}) => {
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 12 }}>
           <label htmlFor="Unfalldaten.Nachname">
-            3. Nachname <Required />
+            6. Nachname <Required />
           </label>
           <Controller
             as={
@@ -285,6 +375,10 @@ const Person = ({onOpenModal}) => {
               minLength: {
                 value: 2,
                 message: errorMessages.minLength("Nachname")
+              },
+              pattern: {
+                value: /^[A-Za-z \u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]+$/i,
+                message: errorMessages.specialChars()
               }
             }}
           />
@@ -298,7 +392,7 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Strasse">
-            4. Straße & Nr. <Required />
+            7. Straße & Nr. <Required />
           </label>
           <Controller
             as={
@@ -332,23 +426,27 @@ const Person = ({onOpenModal}) => {
       <Row gutter={32}>
         <Col xs={{ span: 24 }} sm={{ span: 12 }}>
           <label htmlFor="Unfalldaten.PLZ">
-            5. PLZ <Required />
+            8. PLZ <Required />
           </label>
           <Controller
             as={
-              <Input
+              <MaskedInput
                 className={
                   errors.Unfalldaten && errors.Unfalldaten.PLZ && "input-error"
                 }
                 placeholder="PLZ code"
-                maxLength={5}
+                size={5}
+                mask="11111"
               />
             }
             control={control}
             name="Unfalldaten.PLZ"
             id="Unfalldaten.PLZ"
             rules={{
-              required: errorMessages.required
+              required: errorMessages.required,
+              validate: {
+                inputPLZCorrect: customValidations.isIncorrectPLZ
+              }
             }}
           />
           {errors.Unfalldaten && errors.Unfalldaten.PLZ && (
@@ -359,7 +457,7 @@ const Person = ({onOpenModal}) => {
         </Col>
         <Col xs={{ span: 24 }} sm={{ span: 12 }}>
           <label htmlFor="Unfalldaten.Stadt">
-            6. Stadt <Required />
+            9. Stadt <Required />
           </label>
           <Controller
             as={
@@ -389,7 +487,7 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Email">
-            7. E-mail <Required />
+            10. E-mail <Required />
           </label>
           <Controller
             as={
@@ -422,70 +520,40 @@ const Person = ({onOpenModal}) => {
       </Row>
       <Row>
         <Col span={24}>
-          <label htmlFor="Unfalldaten.Telefon">8. Telefon / Mobil</label>
+          <label htmlFor="Unfalldaten.Telefon">11. Telefon / Mobil</label>
           <Controller
             as={
               <Input
-                className={
-                  errors.Unfalldaten &&
-                  errors.Unfalldaten.Telefon &&
-                  "input-error"
-                }
                 placeholder="Telefon / Mobil"
               />
             }
             control={control}
             name="Unfalldaten.Telefon"
             id="Unfalldaten.Telefon"
-            defaultValue=""
-            rules={{
-              pattern: {
-                value: /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
-                message: errorMessages.incorrect("phone")
-              }
-            }}
           />
-          {errors.Unfalldaten && errors.Unfalldaten.Telefon && (
-            <span className="message-error">
-              {errors.Unfalldaten.Telefon.message}
-            </span>
-          )}
         </Col>
       </Row>
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Kennzeichen_Geg">
-            9. Kennzeichen des Unfallgegners <Required />
+            12. Kennzeichen des Unfallgegners
           </label>
           <Controller
             as={
               <Input
-                className={
-                  errors.Unfalldaten &&
-                  errors.Unfalldaten.Kennzeichen_Geg &&
-                  "input-error"
-                }
                 placeholder="Kennzeichen des Unfallgegners"
               />
             }
             control={control}
             name="Unfalldaten.Kennzeichen_Geg"
             id="Unfalldaten.Kennzeichen_Geg"
-            rules={{
-              required: errorMessages.required
-            }}
           />
-          {errors.Unfalldaten && errors.Unfalldaten.Kennzeichen_Geg && (
-            <span className="message-error">
-              {errors.Unfalldaten.Kennzeichen_Geg.message}
-            </span>
-          )}
         </Col>
       </Row>
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Herkunftsland">
-            10. Herkunfsland Fahrzeug Unfallgegner <Required />
+            13. Herkunftsland Fahrzeug Unfallgegner <Required />
           </label>
           <Controller
             as={
@@ -493,7 +561,7 @@ const Person = ({onOpenModal}) => {
                 className={
                   errors.Unfalldaten &&
                   errors.Unfalldaten.Herkunftsland &&
-                  "select-error"
+                  "input-error"
                 }
                 defaultValue="Deutschland"
                 style={{ width: "100%" }}
@@ -513,13 +581,13 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
           <label htmlFor="Unfalldaten.Versicherung">
-            11. Ist Ihnen die Versicherung des Unfallgegners bekannt?
+            14. Ist Ihnen die Versicherung des Unfallgegners bekannt?
           </label>
           <Controller
             as={
               <div>
                 <Radio.Group
-                  defaultValue="Ja"
+                  defaultValue="Nein"
                   style={{
                     width: "100%"
                   }}
@@ -547,14 +615,14 @@ const Person = ({onOpenModal}) => {
                 </Radio.Group>
               </div>
             }
-            defaultValue="Ja"
+            defaultValue="Nein"
             control={control}
             name="Unfalldaten.Versicherung"
             id="Unfalldaten.Versicherung"
           />
         </Col>
       </Row>
-      {isUnfalldatenVersicherung !== "Nein" ? (
+      {isUnfalldatenVersicherung === "Ja" ? (
         <Row>
           <Col span={24}>
             <Collapse
@@ -574,17 +642,28 @@ const Person = ({onOpenModal}) => {
               >
                 <Row>
                   <Col span={23} offset={1} className="col-border-left">
-                    <label htmlFor="Unfalldaten.Versicherer">
-                      11.1 Versicherer
-                    </label>
+                    <label htmlFor="Unfalldaten.Versicherer">Versicherer</label>
                     <Controller
-                      as={<Input placeholder="Versicherer" />}
+                      as={
+                        <Select
+                          placeholder="Versicherer"
+                          style={{ width: "100%" }}
+                          showSearch={true}
+                          optionFilterProp="children"
+                          filterOption={(input, option) =>
+                            option.children.toLowerCase().indexOf(input.toLowerCase()) === 0
+                          }
+                        >
+                          {versicherungOprions.map((option, index)=>(
+                            <Option key={index} value={option}>{option}</Option>
+                          ))}
+                        </Select>
+                      }
                       control={control}
                       name="Unfalldaten.Versicherer"
                       id="Unfalldaten.Versicherer"
-                      defaultValue=""
                     />
-                    <label htmlFor="Unfalldaten.Nr">11.2 Schadennummer</label>
+                    <label htmlFor="Unfalldaten.Nr">Schadennummer</label>
                     <Controller
                       as={<Input placeholder="Schadennummer" />}
                       control={control}
@@ -605,7 +684,7 @@ const Person = ({onOpenModal}) => {
               <InfoCircleFilled />
               Falls Sie die gegnerischer Versicherung nicht kennen können Sie
               diese einfach unter 0800 250 260 0 kostenfrei erfragen oder hier
-              klicken hier eine online Anfrage stellen: &nbsp;
+              klicken hier eine online Anfrage stellen:
               <a
                 href="https://www.zentralruf.de/"
                 target="_blank"
@@ -621,7 +700,7 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Unfalldatum">
-            12. Unfalldatum <Required />
+            15. Unfalldatum <Required />
           </label>
           <Controller
             as={
@@ -634,9 +713,12 @@ const Person = ({onOpenModal}) => {
                 style={{
                   width: "100%"
                 }}
+                placeholder="Datum wählen"
                 mode="date"
                 format="YYYY-MM-DD"
                 showTime={false}
+                showToday={false}
+                disabledDate={d => !d || d.isAfter(Date.now())}
               />
             }
             control={control}
@@ -656,12 +738,16 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Unfallort">
-            13. Unfallort <Required />
+            16. Unfallort <Required />
           </label>
           <Controller
             as={
               <Select
-                className={errors.Unfalldaten && errors.Unfalldaten.Unfallort && "input-error"}
+                className={
+                  errors.Unfalldaten &&
+                  errors.Unfalldaten.Unfallort &&
+                  "input-error"
+                }
                 defaultValue="Straße"
                 style={{ width: "100%" }}
               >
@@ -698,33 +784,49 @@ const Person = ({onOpenModal}) => {
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Unfallart">
-            14. Unfallart <Required />
+            17. Unfallart <Required />
           </label>
-          <Carousel {...sliderSettings}>
-            {RadioImages.map((radioImage, index) => {
-              return (
-                <RadioImage
-                  onChangeRadioImage={onChangeRadioImage}
-                  name="Unfalldaten.Unfallart"
-                  id={radioImage.id}
-                  key={radioImage.id}
-                  value={radioImage.value}
-                  checked={index === checkedRadioImageIndex}
-                  index={index}
-                  image={radioImage.image}
-                />
-              );
-            })}
-          </Carousel>
+          <br />
+          <Controller
+            as={
+              <div className="radioImages">
+                {RadioImages.map((radioImage, index) => {
+                  return (
+                    <RadioImage
+                      onChangeRadioImage={onChangeRadioImage}
+                      name="Unfalldaten.Unfallart"
+                      id={radioImage.id}
+                      key={radioImage.id}
+                      value={radioImage.value}
+                      checked={checkedRadioImageIndex !== false && index === checkedRadioImageIndex}
+                      index={index}
+                      image={radioImage.image}
+                    />
+                  );
+                })}
+              </div>
+            }
+            control={control}
+            name="Unfalldaten.Unfallart"
+            id="Unfalldaten.Unfallart"
+            rules={{
+              required: errorMessages.required
+            }}
+          />
+          {errors.Unfalldaten && errors.Unfalldaten.Unfallart && (
+            <span className="message-error">
+              {errors.Unfalldaten.Unfallart.message}
+            </span>
+          )}
         </Col>
       </Row>
       <Row>
         <Col span={24}>
           <label htmlFor="Unfalldaten.Sonstiges">
-            14.1 Sonstige Unfallart, bitte beschreiben
+            Sonstige Unfallart, bitte beschreiben
           </label>
           <Controller
-            as={<Input placeholder="Sonstiges Unfallart"/>}
+            as={<Input placeholder="Sonstiges Unfallart" />}
             control={control}
             name="Unfalldaten.Sonstiges"
             id="Unfalldaten.Sonstiges"
@@ -733,7 +835,7 @@ const Person = ({onOpenModal}) => {
         </Col>
       </Row>
       <Row>
-        <Col xs={{ span: 24 }} xl={{ span: 14 }}>
+        <Col xs={{ span: 24 }} xl={{ span: 18 }}>
           <p className="description-info">
             Vielen Dank, wenn Sie alle Pflichtfelder ausgefüllt haben klicken
             Sie unten um Schritt 1 abzuschließen.

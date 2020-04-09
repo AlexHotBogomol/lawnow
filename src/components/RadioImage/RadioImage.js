@@ -3,7 +3,7 @@ import "./RadioImage.css";
 
 const RadioImage = ({ name, id, value, onChangeRadioImage, checked, index, image}) => {
   return (
-    <>
+    <div className="radioImage">
       <input
         type="radio"
         name={name}
@@ -19,7 +19,7 @@ const RadioImage = ({ name, id, value, onChangeRadioImage, checked, index, image
         {image}
       </label>
       <p>{value}</p>
-    </>
+    </div>
   );
 };
 

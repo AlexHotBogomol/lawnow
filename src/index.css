@@ -13,13 +13,13 @@ code {
 }
 
 :root {
-  --accent-color: #1794FC;
+  --accent-color: #FFCC00;
   --accent2-color: #FFCC00;
   --comment-color: #8C8C8C;
   --btn-color: #232018;
   --normal-color: #BFBFBF;
   --secondary-color: #E8E8E8;
-  --black-color: #262626;
+  --black-color: #232018;
   --white-color: #ffffff;
   --error-color: #F00C2C;
   --warning-color: #F78924;

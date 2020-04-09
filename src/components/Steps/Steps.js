@@ -28,7 +28,7 @@ const stepsArray= [
 
 const Steps = ({currentStep}) => {
   return(
-    <>
+    <div className="steps-wrapper">
       <div className="steps">
         {stepsArray.map((step, index, array) => {
           const stepClasses = [
@@ -44,9 +44,6 @@ const Steps = ({currentStep}) => {
               <h1 className="step-title">
                 {step.title}
               </h1>
-              {(index < array.length - 1) ? (
-                <div className="step-arrow"></div>
-              ) : null}
             </div>
           )
         })}
@@ -55,7 +52,7 @@ const Steps = ({currentStep}) => {
         {stepsArray[currentStep].description}
       </p>
       <p className="required-info">* Pflichtfeld</p>
-    </>
+    </div>
   )
 };
 

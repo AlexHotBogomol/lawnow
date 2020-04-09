@@ -2,6 +2,23 @@
     position: absolute;
     left: -9999px;
 }
+.radioImages{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: -30px;
+}
+.radioImage{
+    width: 31%;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var( --black-color);
+    margin-bottom: 30px;
+}
+.radioImage p{
+    margin-bottom: 0;
+}
 .radioImage-label{
     width: 100%;
     height: auto;
@@ -20,4 +37,11 @@
 }
 .radioImage-input:checked + .radioImage-label>img, .radioImage-input:checked + .radioImage-label>svg {
     border: 2px solid var(--accent-color);
+}
+
+@media only screen
+and (max-width: 767px){
+    .radioImage{
+        width: 48%;
+    }
 }

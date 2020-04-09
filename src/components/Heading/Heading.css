@@ -20,7 +20,7 @@
     position: absolute;
     top: 50%;
     left: 100%;
-    background: var(--secondary-color);
+    background: var(--normal-color);
 }
 .heading svg{
     margin-right: 14px;

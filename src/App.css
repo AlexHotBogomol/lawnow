@@ -53,6 +53,7 @@ label{
   padding-bottom: 5px;
   display: inline-block;
   padding-top: 12px;
+  font-size: 0.875rem;
 }
 .description{
   font-size: 1rem;
@@ -61,8 +62,9 @@ label{
   padding-bottom: 25px;
   padding-top: 35px;
   margin-bottom: 0;
-  width: 520px;
+  width: 700px;
   max-width: 100%;
+  font-weight: 600;
 }
 .required-info{
   color: var(--error-color);
@@ -76,6 +78,7 @@ label{
   margin-bottom: 0;
   color: var(--black-color);
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.5;
 }
 .ant-collapse{
@@ -84,6 +87,11 @@ label{
 .ant-radio-button-wrapper{
   height: 40px;
   line-height: 38px;
+  font-size: 1rem;
+  transition: color 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s, font-weight 0.3s;
+}
+.ant-picker-range{
+  display: flex;
 }
 .ant-collapse-borderless > .ant-collapse-item{
   border: none;
@@ -126,6 +134,9 @@ label{
   bottom: 0;
   left: -20px;
 }
+.col-border-left.border-97:before{
+  height: 96%;
+}
 .ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content{
   padding-bottom: 20px;
 }
@@ -137,12 +148,12 @@ label{
   line-height: 21px;
   color: var(--warning-color);
   margin: 0 auto;
-  width: 440px;
+  width: 450px;
   max-width: 100%;
 }
 
-.input-error, .select-error .ant-select-selector{
-  border-color: var(--error-color);
+.input-error, .input-error .ant-select-selector{
+  border-color: var(--error-color) !important;
 }
 
 .message-error{
@@ -155,7 +166,7 @@ label{
   font-size: 1rem;
 }
 .message-info{
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.33;
   color: var(--black-color);
   position: relative;
@@ -240,6 +251,19 @@ label{
 }
 .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow{
   font-size: 1rem;
+}
+.ant-upload.ant-upload-drag{
+  background: var(--white-color);
+}
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+  color: var(--black-color);
+  font-weight: 600;
+}
+.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover{
+  color: var(--black-color);
+}
+.ant-upload-list-item-info .ant-upload-text-icon .anticon, .ant-upload-list-item-info .anticon-loading .anticon, .ant-upload-list-item-name{
+  color: var(--error-color);
 }
 
 @media only screen

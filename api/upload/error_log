@@ -1,0 +1,58 @@
+[09-Apr-2020 10:54:22 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 10:54:22 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 10:54:22 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 10:54:22 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 10:54:22 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 10:55:00 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 10:55:00 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 10:55:00 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 10:55:00 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 10:55:00 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 10:58:26 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 10:58:26 Europe/Kiev] PHP Warning:  move_uploaded_file(/home/jazzonth/lawnow.ein-des-ein.com/api/upload/home/jazzonth/lawnow.ein-des-ein.com/uploads/hqdefault.jpg): failed to open stream: No such file or directory in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 28
+[09-Apr-2020 10:58:26 Europe/Kiev] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phppAizWj' to '/home/jazzonth/lawnow.ein-des-ein.com/api/upload/home/jazzonth/lawnow.ein-des-ein.com/uploads/hqdefault.jpg' in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 28
+[09-Apr-2020 10:59:44 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 10:59:44 Europe/Kiev] PHP Warning:  move_uploaded_file(/home/jazzonth/lawnow.ein-des-ein.com/api/upload/uploads/hqdefault.jpg): failed to open stream: No such file or directory in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 28
+[09-Apr-2020 10:59:44 Europe/Kiev] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phptd9OpL' to '/home/jazzonth/lawnow.ein-des-ein.com/api/upload/uploads/hqdefault.jpg' in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 28
+[09-Apr-2020 11:02:31 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 11:06:59 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 11:06:59 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 11:06:59 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 11:06:59 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 11:06:59 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 11:07:18 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 11:07:18 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 11:07:18 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 11:07:18 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 11:07:18 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 11:17:27 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 11:17:27 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 11:17:27 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 11:17:27 Europe/Kiev] PHP Notice:  Undefined index: the_file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 11:17:27 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 11:26:39 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 11:31:49 Europe/Kiev] PHP Notice:  Only variables should be passed by reference in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 13
+[09-Apr-2020 12:10:55 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:10:55 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:10:55 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:10:55 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 12:38:04 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:38:04 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:38:04 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:38:04 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 12:42:45 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:42:45 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:42:45 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:42:45 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 12:44:37 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:44:37 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:44:37 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:44:37 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 12:47:14 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:47:14 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:47:14 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:47:14 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12
+[09-Apr-2020 12:50:57 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 9
+[09-Apr-2020 12:50:57 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 10
+[09-Apr-2020 12:50:57 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 11
+[09-Apr-2020 12:50:57 Europe/Kiev] PHP Notice:  Undefined index: file in /home/jazzonth/lawnow.ein-des-ein.com/api/upload/upload.php on line 12

@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  border-radius: 6px;
+  padding: 14px 45px;
 }
 
 .step-icon {
@@ -13,6 +15,7 @@
   margin-bottom: -2px;
   width: 24px;
   height: 24px;
+  color: var(--comment-color);
 }
 .step-icon svg{
   width: 100%;
@@ -22,7 +25,7 @@
   margin: 0;
   line-height: 1;
   font-weight: 400;
-  color: var(--secondary-color);
+  color: var(--comment-color);
 }
 .step-arrow {
   margin: 0 30px;
@@ -32,6 +35,10 @@
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.step.active{
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 .step.active,
 .step.active .step-title {
@@ -49,14 +56,11 @@ and (max-width: 1199px){
 
 @media only screen
 and (max-width: 767px){
+  .step{
+    padding: 10px 15px;
+  }
   .step-title{
     font-size: 1.25rem;
-  }
-  .step-arrow{
-    margin: 0 8px;
-    width: 4px;
-    height: 7px;
-    background-image: url("data:image/svg+xml,%3Csvg width='4' height='7' viewBox='0 0 4 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.696543 6.5L-6.65319e-08 5.86744L2.60691 3.5L-6.65319e-08 1.13256L0.696543 0.5L4 3.5L0.696543 6.5Z' fill='%23D9D9D9'/%3E%3C/svg%3E%0A");
   }
   .step-icon{
     width: 18px;
@@ -68,6 +72,9 @@ and (max-width: 767px){
 
 @media only screen
 and (max-width: 374px){
+  .step{
+    padding: 10px 10px;
+  }
   .step-title {
     font-size: 1rem;
   }

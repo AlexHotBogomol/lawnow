@@ -1,0 +1,358 @@
+[24-Mar-2020 16:30:39 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:30:39 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 16:30:52 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:30:52 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 16:30:56 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:30:56 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 16:32:33 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:32:33 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 16:33:30 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:33:30 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 16:33:36 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 16:33:36 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[24-Mar-2020 17:15:32 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[24-Mar-2020 17:15:32 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 14:11:14 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 14:11:14 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 14:19:39 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:23:37 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:23:56 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:24:30 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:29:12 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:30:01 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:30:54 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:31:15 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:31:48 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:32:16 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 14:41:54 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:54:39 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:54:44 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:55:07 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:55:22 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:55:51 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:56:10 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[30-Mar-2020 15:59:32 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 15:59:32 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:11:10 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:11:10 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:19:07 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:19:07 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:19:56 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:19:56 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:34:26 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:34:26 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:34:57 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:34:57 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 16:38:04 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 16:38:04 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 17:40:42 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 17:40:42 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 17:41:18 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 17:41:18 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 17:55:36 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 17:55:36 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 17:56:21 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 17:56:21 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[30-Mar-2020 18:14:22 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[30-Mar-2020 18:14:22 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[31-Mar-2020 13:14:55 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[31-Mar-2020 13:14:55 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[31-Mar-2020 13:14:55 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[01-Apr-2020 00:55:23 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[01-Apr-2020 00:55:23 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 19
+[01-Apr-2020 00:55:23 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 20
+[01-Apr-2020 13:49:18 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 13
+[03-Apr-2020 15:41:02 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 16
+[03-Apr-2020 15:41:02 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 22
+[03-Apr-2020 15:41:02 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 23
+[03-Apr-2020 15:48:21 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 22
+[03-Apr-2020 15:48:21 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 23
+[03-Apr-2020 19:41:27 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 22
+[03-Apr-2020 19:41:27 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 23
+[04-Apr-2020 18:23:44 Europe/Kiev] PHP Notice:  Undefined index: Telefon in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 16
+[04-Apr-2020 18:23:44 Europe/Kiev] PHP Notice:  Undefined index: Versicherer in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 22
+[04-Apr-2020 18:23:44 Europe/Kiev] PHP Notice:  Undefined index: Nr in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/person.php on line 23
+[08-Apr-2020 12:42:04 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 12:42:33 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 13:17:42 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 13:18:04 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 13:18:28 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 13:18:34 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 13:20:15 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 49
+[08-Apr-2020 13:26:38 Europe/Kiev] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 114
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 57
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 124
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 125
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 126
+[08-Apr-2020 14:53:13 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 57
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 124
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 125
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 126
+[08-Apr-2020 14:57:47 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 52
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 57
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 124
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 125
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 126
+[08-Apr-2020 15:00:54 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 57
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 125
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 126
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 127
+[08-Apr-2020 15:02:17 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 131
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 53
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 55
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  Illegal string offset 'type' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 60
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  Illegal string offset 'name' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 61
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  fopen(I): failed to open stream: No such file or directory in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 128
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  filesize(): stat failed for I in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 129
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 129
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 15:07:32 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 134
+[08-Apr-2020 15:10:03 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 59
+[08-Apr-2020 15:10:03 Europe/Kiev] PHP Notice:  Undefined variable: fname in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 15:10:51 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 55
+[08-Apr-2020 15:10:51 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 59
+[08-Apr-2020 15:10:51 Europe/Kiev] PHP Notice:  Undefined variable: fname in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 15:10:51 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Doks_Name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 108
+[08-Apr-2020 15:10:51 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 108
+[08-Apr-2020 15:14:03 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 55
+[08-Apr-2020 15:14:03 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 59
+[08-Apr-2020 15:14:03 Europe/Kiev] PHP Notice:  Undefined variable: fname in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 15:14:03 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Doks_Name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 108
+[08-Apr-2020 15:14:03 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 108
+[08-Apr-2020 15:14:34 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 55
+[08-Apr-2020 15:14:34 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 59
+[08-Apr-2020 15:14:34 Europe/Kiev] PHP Notice:  Undefined variable: fname in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 60
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 61
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 60
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 61
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 128
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 129
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Notice:  Undefined variable: message in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 134
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fopen(): Filename cannot be empty in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 128
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fread() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 129
+[08-Apr-2020 15:22:33 Europe/Kiev] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 130
+[08-Apr-2020 15:35:50 Europe/Kiev] PHP Warning:  require(/libs/PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:35:50 Europe/Kiev] PHP Fatal error:  require(): Failed opening required '/libs/PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:39:20 Europe/Kiev] PHP Warning:  require(/../../libs/PHPMailer/src/Exception.php): failed to open stream: No such file or directory in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:39:20 Europe/Kiev] PHP Fatal error:  require(): Failed opening required '/../../libs/PHPMailer/src/Exception.php' (include_path='.:/opt/alt/php71/usr/share/pear') in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:43:22 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 9
+[08-Apr-2020 15:43:42 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 9
+[08-Apr-2020 15:45:06 Europe/Kiev] PHP Parse error:  syntax error, unexpected '__DIR__' (T_DIR) in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:08 Europe/Kiev] PHP Parse error:  syntax error, unexpected '__DIR__' (T_DIR) in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:08 Europe/Kiev] PHP Parse error:  syntax error, unexpected '__DIR__' (T_DIR) in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:29 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:31 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:31 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:32 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:32 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:33 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:33 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:33 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:33 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:33 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:35 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:35 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:35 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:36 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:45:36 Europe/Kiev] PHP Fatal error:  Uncaught Error: Call to undefined function ehco() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 2
+[08-Apr-2020 15:48:46 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 9
+[08-Apr-2020 15:52:54 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer' not found in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php:4
+Stack trace:
+#0 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 4
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Notice:  Undefined index: Dok in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 53
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 54
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Doks_Files in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 62
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Notice:  Undefined variable: fname in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 67
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Notice:  Undefined variable: Unfall_Weiteres_Doks_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 120
+[08-Apr-2020 16:11:24 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 120
+[08-Apr-2020 16:13:49 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 16:13:49 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 16:13:49 Europe/Kiev] PHP Warning:  preg_match() expects parameter 2 to be string, array given in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 1747
+[08-Apr-2020 16:13:49 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\Exception' not found in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php:2965
+Stack trace:
+#0 /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php(114): PHPMailer\PHPMailer\PHPMailer->addAttachment(Array, 'NameOfFile.pdf')
+#1 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 2965
+[08-Apr-2020 17:14:23 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 17:14:23 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 17:14:23 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 17:35:36 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 17:35:36 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 17:35:36 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 17:37:56 Europe/Kiev] PHP Notice:  Undefined index: Infos in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 58
+[08-Apr-2020 17:37:56 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 17:37:56 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 17:37:56 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\Exception' not found in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php:2965
+Stack trace:
+#0 /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php(114): PHPMailer\PHPMailer\PHPMailer->addAttachment('Unfall.Weiteres...', 'NameOfFile.pdf')
+#1 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 2965
+[08-Apr-2020 17:56:10 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 17:56:10 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 17:56:10 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\Exception' not found in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php:2965
+Stack trace:
+#0 /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php(114): PHPMailer\PHPMailer\PHPMailer->addAttachment('Unfall.Weiteres...', 'NameOfFile.pdf')
+#1 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 2965
+[08-Apr-2020 18:26:34 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 18:26:34 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 18:26:34 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\Exception' not found in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php:2965
+Stack trace:
+#0 /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php(114): PHPMailer\PHPMailer\PHPMailer->addAttachment('Unfall.Weiteres...', 'NameOfFile.pdf')
+#1 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 2965
+[08-Apr-2020 18:30:37 Europe/Kiev] PHP Notice:  Undefined index: type in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 63
+[08-Apr-2020 18:30:37 Europe/Kiev] PHP Notice:  Undefined index: name in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 64
+[08-Apr-2020 18:30:37 Europe/Kiev] PHP Fatal error:  Uncaught Error: Class 'PHPMailer\PHPMailer\Exception' not found in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php:2965
+Stack trace:
+#0 /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php(114): PHPMailer\PHPMailer\PHPMailer->addAttachment('Unfall.Weiteres...', 'NameOfFile.pdf')
+#1 {main}
+  thrown in /home/jazzonth/lawnow.ein-des-ein.com/libs/PHPMailer/src/PHPMailer.php on line 2965
+[08-Apr-2020 19:10:56 Europe/Kiev] PHP Parse error:  syntax error, unexpected '$msg' (T_VARIABLE) in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 325
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Illegal string offset 'fileList' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 76
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 77
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined index: fileList in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 92
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 93
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined index: Verletzungen in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 105
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined index: Kostenvoranschlag in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 135
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 137
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 142
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined index: $Gutachten in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 149
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 151
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined index: $Haushaltsfuehrungsschaden in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 208
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined variable: Fahrzeugschaden_Nachweis_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 271
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 271
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined variable: Abschleppkosten_Rechnung_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 279
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 279
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined variable: Kostenvoranschlag_Dok_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 302
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 302
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined variable: Kostenvoranschlag_Foto_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 303
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 303
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Notice:  Undefined variable: Gutachten_Gutachten_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 307
+[08-Apr-2020 19:11:53 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 307
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  Illegal string offset 'fileList' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 76
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 77
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined index: fileList in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 92
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 93
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined index: Verletzungen in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 105
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined index: $Gutachten in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 149
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 151
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined index: $Haushaltsfuehrungsschaden in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 208
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined variable: Fahrzeugschaden_Nachweis_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 271
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 271
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined variable: Abschleppkosten_Rechnung_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 279
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 279
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Notice:  Undefined variable: Gutachten_Gutachten_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 307
+[08-Apr-2020 19:15:59 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 307
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  Illegal string offset 'fileList' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 76
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 77
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined index: fileList in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 92
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 93
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined index: Verletzungen in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 105
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined index: $Gutachten in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 149
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 151
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined index: $Haushaltsfuehrungsschaden in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 208
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined index: $Haushaltsfuehrungsschaden in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 209
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined variable: Fahrzeugschaden_Nachweis_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 264
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 264
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined variable: Abschleppkosten_Rechnung_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 272
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 272
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Notice:  Undefined variable: Gutachten_Gutachten_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 300
+[08-Apr-2020 19:22:43 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 300
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  Illegal string offset 'fileList' in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 76
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 77
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined index: fileList in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 92
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 93
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined index: Verletzungen in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 105
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined index: $Gutachten in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 149
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  Invalid argument supplied for foreach() in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 151
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined variable: Fahrzeugschaden_Nachweis_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 264
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 264
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined variable: Abschleppkosten_Rechnung_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 272
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 272
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Notice:  Undefined variable: Gutachten_Gutachten_Names in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 300
+[08-Apr-2020 19:24:07 Europe/Kiev] PHP Warning:  join(): Invalid arguments passed in /home/jazzonth/lawnow.ein-des-ein.com/api/contact/unfall.php on line 300
