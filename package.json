@@ -22,7 +22,8 @@
     "react-hook-form": "^5.0.3",
     "react-html-parser": "^2.0.2",
     "react-scripts": "3.4.0",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "uuid": "^7.0.3"
   },
   "scripts": {
     "start": "react-app-rewired start",

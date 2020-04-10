@@ -12,7 +12,7 @@ import ReactHtmlParser from "react-html-parser";
 import disableScroll from 'disable-scroll';
 
 const App = () => {
-  let [currentStep, setCurrentStep] = useState(2);
+  let [currentStep, setCurrentStep] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const onCloseModal = event => {

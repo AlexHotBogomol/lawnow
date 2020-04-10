@@ -29,6 +29,7 @@ import ThreePersons from "../icons/ThreePersons";
 import MaskedInput from "antd-mask-input";
 import NearHeading from "../icons/NearHeading";
 import NearHeading2 from "../icons/NearHeading2";
+import { v1 as uuidv1 } from 'uuid';
 
 const API_PATH = "/api/contact/unfall.php";
 const { Panel } = Collapse;
@@ -36,8 +37,10 @@ const { Dragger } = Upload;
 const { Option } = Select;
 const { RangePicker } = DatePicker;
 
+const id = uuidv1();
+
 const Unfall = ({ onOpenModal }) => {
-  const { handleSubmit, control, watch, errors } = useForm();
+  const { handleSubmit, control, watch, errors, register} = useForm();
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -129,18 +132,43 @@ const Unfall = ({ onOpenModal }) => {
     setPanelState(state);
   };
 
+  //TimePicker
+  // const [timePickerValue, setTimePickerValue] = useState(null);
+  //
+  // const onTimeChange = (time) => {
+  //   console.log(time);
+  //   setTimePickerValue(time);
+  // };
+  //
+  // const onOpenChange = (open) => {
+  //   console.log(open)
+  // };
+
   //Drager
 
   const propsForDrager = {
     multiple: true,
-    action: "https://www.mocky.io/v2/5cc8019d300000980a055e76",
-    onChange(info) {
-      const { status } = info.file;
-      if (status === "done") {
-        message.success(`${info.file.name} file uploaded successfully.`);
-      } else if (status === "error") {
-        message.error(`${info.file.name} file upload failed.`);
-      }
+    customRequest: ({file, onSuccess, onError}) => {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('id', id);
+      console.log(formData);
+      axios({
+        method: 'post',
+        url: '/api/upload/upload.php',
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        data: formData,
+      })
+        .then(function (response) {
+          message.success(`${file.name}. Upload war erfolgreich.`);
+          onSuccess();
+        })
+        .catch(function (error) {
+          message.error(`${file.name}. Upload hat nicht geklappt.`);
+          onError();
+        });
     }
   };
 
@@ -148,7 +176,7 @@ const Unfall = ({ onOpenModal }) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <Row>
         <Col span={24}>
-          <Heading title="1. Unfalldaten" icon={<NearHeading />} />
+          <Heading title="Unfalldaten" icon={<NearHeading />} />
         </Col>
       </Row>
       <Row>
@@ -1300,6 +1328,7 @@ const Unfall = ({ onOpenModal }) => {
                       errors.Fahrzeugschaden.Datum &&
                       "input-error"
                     }
+                    placeholder="Datum wählen"
                     style={{
                       width: "100%"
                     }}
@@ -1683,7 +1712,7 @@ const Unfall = ({ onOpenModal }) => {
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
               <label htmlFor="Sachverstaendigengebuehren.Frage">
-                12. Sachverständigengebühren / Kosten für Kostenvoranschlag
+                12. Möchten Sie Sachverständigengebühren oder Kosten für den Kostenvoranschlag einreichen?
               </label>
               <Controller
                 as={
@@ -1794,127 +1823,127 @@ const Unfall = ({ onOpenModal }) => {
       <Row>
         <Col span={24}>
           <Heading
-            title="2. Weitere Schadenpositionen"
+            title="Weitere Schadenpositionen"
             icon={<NearHeading2 />}
           />
         </Col>
       </Row>
-      <Row>
-        <Col xs={{ span: 24 }} sm={{ span: 16 }}>
-          <label htmlFor="Fahrten.Frage">
-            13. Sind unfallbedinge Fahrten bzw. Fahrtkosten angefallen?
-          </label>
-          <Controller
-            as={
-              <div>
-                <Radio.Group
-                  defaultValue="Nein"
-                  style={{
-                    width: "100%"
-                  }}
-                  buttonStyle="solid"
-                >
-                  <Radio.Button
-                    value="Ja"
-                    style={{
-                      width: "50%",
-                      textAlign: "center"
-                    }}
-                  >
-                    Ja
-                  </Radio.Button>
-                  <Radio.Button
-                    value="Nein"
-                    style={{
-                      width: "50%",
-                      textAlign: "center"
-                    }}
-                    defaultChecked={true}
-                  >
-                    Nein
-                  </Radio.Button>
-                </Radio.Group>
-              </div>
-            }
-            defaultValue="Nein"
-            control={control}
-            name="Fahrten.Frage"
-            id="Fahrten.Frage"
-          />
-        </Col>
-      </Row>
-      {isFahrtenFrage === "Ja" ? (
-        <Row>
-          <Col span={24}>
-            <Collapse
-              bordered={false}
-              defaultActiveKey={["1"]}
-              onChange={() => {
-                onPanelChange("isFahrtenOpen");
-              }}
-            >
-              <Panel
-                header={panelState.isFahrtenOpen ? "Ausblenden" : "Zeigen"}
-                key={1}
-              >
-                <Row>
-                  <Col span={23} offset={1} className="col-border-left">
-                    <Row>
-                      <Col span={10}>
-                        <label htmlFor="Fahrten.Rechnung">
-                          Rechnung <Required />
-                        </label>
-                        <Controller
-                          as={
-                            <Dragger {...propsForDrager}>
-                              <p className="ant-upload-drag-icon">
-                                <InboxOutlined />
-                              </p>
-                              <p className="ant-upload-text">
-                                Dokument hierher ziehen oder hier klicken
-                              </p>
-                              <p className="ant-upload-hint">
-                                Einzel- oder Massen-Upload.
-                              </p>
-                            </Dragger>
-                          }
-                          control={control}
-                          name="Fahrten.Rechnung"
-                          id="Fahrten.Rechnung"
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={10}>
-                        <div className="message-info">
-                          <InfoCircleFilled />
-                          Für eine zügigere Bearbeitung können Sie folgende
-                          Daten einpflegen (optional)
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                        <label htmlFor="Fahrten.Rechnung.Summe">Summe</label>
-                        <Controller
-                          as={<Input placeholder="Summe" />}
-                          control={control}
-                          name="Fahrten.Rechnung.Summe"
-                          id="Fahrten.Rechnung.Summe"
-                        />
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </Panel>
-            </Collapse>
-          </Col>
-        </Row>
-      ) : null}
+      {/*<Row>*/}
+      {/*  <Col xs={{ span: 24 }} sm={{ span: 16 }}>*/}
+      {/*    <label htmlFor="Fahrten.Frage">*/}
+      {/*      13. Möchten Sie Heilbehandlungskosten einreichen?*/}
+      {/*    </label>*/}
+      {/*    <Controller*/}
+      {/*      as={*/}
+      {/*        <div>*/}
+      {/*          <Radio.Group*/}
+      {/*            defaultValue="Nein"*/}
+      {/*            style={{*/}
+      {/*              width: "100%"*/}
+      {/*            }}*/}
+      {/*            buttonStyle="solid"*/}
+      {/*          >*/}
+      {/*            <Radio.Button*/}
+      {/*              value="Ja"*/}
+      {/*              style={{*/}
+      {/*                width: "50%",*/}
+      {/*                textAlign: "center"*/}
+      {/*              }}*/}
+      {/*            >*/}
+      {/*              Ja*/}
+      {/*            </Radio.Button>*/}
+      {/*            <Radio.Button*/}
+      {/*              value="Nein"*/}
+      {/*              style={{*/}
+      {/*                width: "50%",*/}
+      {/*                textAlign: "center"*/}
+      {/*              }}*/}
+      {/*              defaultChecked={true}*/}
+      {/*            >*/}
+      {/*              Nein*/}
+      {/*            </Radio.Button>*/}
+      {/*          </Radio.Group>*/}
+      {/*        </div>*/}
+      {/*      }*/}
+      {/*      defaultValue="Nein"*/}
+      {/*      control={control}*/}
+      {/*      name="Fahrten.Frage"*/}
+      {/*      id="Fahrten.Frage"*/}
+      {/*    />*/}
+      {/*  </Col>*/}
+      {/*</Row>*/}
+      {/*{isFahrtenFrage === "Ja" ? (*/}
+      {/*  <Row>*/}
+      {/*    <Col span={24}>*/}
+      {/*      <Collapse*/}
+      {/*        bordered={false}*/}
+      {/*        defaultActiveKey={["1"]}*/}
+      {/*        onChange={() => {*/}
+      {/*          onPanelChange("isFahrtenOpen");*/}
+      {/*        }}*/}
+      {/*      >*/}
+      {/*        <Panel*/}
+      {/*          header={panelState.isFahrtenOpen ? "Ausblenden" : "Zeigen"}*/}
+      {/*          key={1}*/}
+      {/*        >*/}
+      {/*          <Row>*/}
+      {/*            <Col span={23} offset={1} className="col-border-left">*/}
+      {/*              <Row>*/}
+      {/*                <Col span={10}>*/}
+      {/*                  <label htmlFor="Fahrten.Rechnung">*/}
+      {/*                    Rechnung <Required />*/}
+      {/*                  </label>*/}
+      {/*                  <Controller*/}
+      {/*                    as={*/}
+      {/*                      <Dragger {...propsForDrager}>*/}
+      {/*                        <p className="ant-upload-drag-icon">*/}
+      {/*                          <InboxOutlined />*/}
+      {/*                        </p>*/}
+      {/*                        <p className="ant-upload-text">*/}
+      {/*                          Dokument hierher ziehen oder hier klicken*/}
+      {/*                        </p>*/}
+      {/*                        <p className="ant-upload-hint">*/}
+      {/*                          Einzel- oder Massen-Upload.*/}
+      {/*                        </p>*/}
+      {/*                      </Dragger>*/}
+      {/*                    }*/}
+      {/*                    control={control}*/}
+      {/*                    name="Fahrten.Rechnung"*/}
+      {/*                    id="Fahrten.Rechnung"*/}
+      {/*                  />*/}
+      {/*                </Col>*/}
+      {/*              </Row>*/}
+      {/*              <Row>*/}
+      {/*                <Col span={10}>*/}
+      {/*                  <div className="message-info">*/}
+      {/*                    <InfoCircleFilled />*/}
+      {/*                    Für eine zügigere Bearbeitung können Sie folgende*/}
+      {/*                    Daten einpflegen (optional)*/}
+      {/*                  </div>*/}
+      {/*                </Col>*/}
+      {/*              </Row>*/}
+      {/*              <Row>*/}
+      {/*                <Col span={24}>*/}
+      {/*                  <label htmlFor="Fahrten.Rechnung.Summe">Summe</label>*/}
+      {/*                  <Controller*/}
+      {/*                    as={<Input placeholder="Summe" />}*/}
+      {/*                    control={control}*/}
+      {/*                    name="Fahrten.Rechnung.Summe"*/}
+      {/*                    id="Fahrten.Rechnung.Summe"*/}
+      {/*                  />*/}
+      {/*                </Col>*/}
+      {/*              </Row>*/}
+      {/*            </Col>*/}
+      {/*          </Row>*/}
+      {/*        </Panel>*/}
+      {/*      </Collapse>*/}
+      {/*    </Col>*/}
+      {/*  </Row>*/}
+      {/*) : null}*/}
       <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
           <label htmlFor="Abschleppkosten.Frage">
-            14. Sind Ihnen Abschleppkosten entstanden?
+            13. Möchten Sie Abschleppkosten einreichen?
           </label>
           <Controller
             as={
@@ -2031,8 +2060,8 @@ const Unfall = ({ onOpenModal }) => {
       ) : null}
       <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
-          <label htmlFor="Verletzt.Frage">
-            15. Wurden Sie durch den Unfall verletzt?
+          <label htmlFor="Abschleppkosten.Frage">
+            14. Wurden Sie durch den Unfall verletzt?
           </label>
           <Controller
             as={
@@ -2068,127 +2097,172 @@ const Unfall = ({ onOpenModal }) => {
             }
             defaultValue="Nein"
             control={control}
-            name="Verletzt.Frage"
-            id="Verletzt.Frage"
+            name="Abschleppkosten.Frage"
+            id="Abschleppkosten.Frage"
           />
         </Col>
       </Row>
-      {isVerletztFrage === "Ja" ? (
-        <Row>
-          <Col span={24}>
-            <Collapse
-              bordered={false}
-              defaultActiveKey={["1"]}
-              onChange={() => {
-                onPanelChange("isVerletztOpen");
-              }}
-            >
-              <Panel
-                header={panelState.isVerletztOpen ? "Ausblenden" : "Zeigen"}
-                key={1}
-              >
-                <Row>
-                  <Col span={23} offset={1} className="col-border-left">
-                    <Row>
-                      <Col span={10}>
-                        <label htmlFor="Verletzt.Rechnung">Rechnung</label>
-                        <Controller
-                          as={
-                            <Dragger {...propsForDrager}>
-                              <p className="ant-upload-drag-icon">
-                                <InboxOutlined />
-                              </p>
-                              <p className="ant-upload-text">
-                                Dokument hierher ziehen oder hier klicken
-                              </p>
-                              <p className="ant-upload-hint">
-                                Einzel- oder Massen-Upload.
-                              </p>
-                            </Dragger>
-                          }
-                          control={control}
-                          name="Verletzt.Rechnung"
-                          id="Verletzt.Rechnung"
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={10}>
-                        <div className="message-info">
-                          <InfoCircleFilled />
-                          Für eine zügigere Bearbeitung können Sie folgende
-                          Daten einpflegen (optional)
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                        <label htmlFor="Verletzt.Verletzungen">
-                          Welche Verletzungen liegen vor? Primärverletzung?
-                        </label>
-                        <Controller
-                          as={
-                            <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
-                          }
-                          control={control}
-                          name="Verletzt.Verletzungen "
-                          id="Verletzt.Verletzungen "
-                        />
-                      </Col>
-                    </Row>
-                  </Col>
-                </Row>
-              </Panel>
-            </Collapse>
-          </Col>
-        </Row>
-      ) : null}
-      <Row>
-        <Col xs={{ span: 24 }} sm={{ span: 16 }}>
-          <label htmlFor="Arbeitsunfahigkeit.Frage">
-            16. Bestand eine Arbeitsunfähigkeit?
-          </label>
-          <Controller
-            as={
-              <div>
-                <Radio.Group
-                  defaultValue="Nein"
-                  style={{
-                    width: "100%"
-                  }}
-                  buttonStyle="solid"
-                >
-                  <Radio.Button
-                    value="Ja"
-                    style={{
-                      width: "50%",
-                      textAlign: "center"
-                    }}
-                  >
-                    Ja
-                  </Radio.Button>
-                  <Radio.Button
-                    value="Nein"
-                    style={{
-                      width: "50%",
-                      textAlign: "center"
-                    }}
-                    defaultChecked={true}
-                  >
-                    Nein
-                  </Radio.Button>
-                </Radio.Group>
-              </div>
-            }
-            defaultValue="Nein"
-            control={control}
-            name="Arbeitsunfahigkeit.Frage"
-            id="Arbeitsunfahigkeit.Frage"
-          />
-        </Col>
-      </Row>
-      {isArbeitsunfahigkeitFrage === "Ja" ? (
+      {isAbschleppkostenFrage === "Ja" ? (
         <>
+          <Row>
+            <Col xs={{ span: 24 }} sm={{ span: 16 }}>
+              <label htmlFor="Verletzt.Frage">
+                15. Möchten Sie Schmerzensgeld einreichen?
+              </label>
+              <Controller
+                as={
+                  <div>
+                    <Radio.Group
+                      defaultValue="Nein"
+                      style={{
+                        width: "100%"
+                      }}
+                      buttonStyle="solid"
+                    >
+                      <Radio.Button
+                        value="Ja"
+                        style={{
+                          width: "50%",
+                          textAlign: "center"
+                        }}
+                      >
+                        Ja
+                      </Radio.Button>
+                      <Radio.Button
+                        value="Nein"
+                        style={{
+                          width: "50%",
+                          textAlign: "center"
+                        }}
+                        defaultChecked={true}
+                      >
+                        Nein
+                      </Radio.Button>
+                    </Radio.Group>
+                  </div>
+                }
+                defaultValue="Nein"
+                control={control}
+                name="Verletzt.Frage"
+                id="Verletzt.Frage"
+              />
+            </Col>
+          </Row>
+        {isVerletztFrage === "Ja" ? (
+          <Row>
+            <Col span={24}>
+              <Collapse
+                bordered={false}
+                defaultActiveKey={["1"]}
+                onChange={() => {
+                  onPanelChange("isVerletztOpen");
+                }}
+              >
+                <Panel
+                  header={panelState.isVerletztOpen ? "Ausblenden" : "Zeigen"}
+                  key={1}
+                >
+                  <Row>
+                    <Col span={23} offset={1} className="col-border-left">
+                      <Row>
+                        <Col span={10}>
+                          <label htmlFor="Verletzt.Rechnung">Rechnung</label>
+                          <Controller
+                            as={
+                              <Dragger {...propsForDrager}>
+                                <p className="ant-upload-drag-icon">
+                                  <InboxOutlined />
+                                </p>
+                                <p className="ant-upload-text">
+                                  Dokument hierher ziehen oder hier klicken
+                                </p>
+                                <p className="ant-upload-hint">
+                                  Einzel- oder Massen-Upload.
+                                </p>
+                              </Dragger>
+                            }
+                            control={control}
+                            name="Verletzt.Rechnung"
+                            id="Verletzt.Rechnung"
+                          />
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col span={10}>
+                          <div className="message-info">
+                            <InfoCircleFilled />
+                            Für eine zügigere Bearbeitung können Sie folgende
+                            Daten einpflegen (optional)
+                          </div>
+                        </Col>
+                      </Row>
+                      <Row>
+                        <Col span={24}>
+                          <label htmlFor="Verletzt.Verletzungen">
+                            Welche Verletzungen liegen vor? Primärverletzung?
+                          </label>
+                          <Controller
+                            as={
+                              <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
+                            }
+                            control={control}
+                            name="Verletzt.Verletzungen "
+                            id="Verletzt.Verletzungen "
+                          />
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                </Panel>
+              </Collapse>
+            </Col>
+          </Row>
+        ) : null}
+          <Row>
+            <Col xs={{ span: 24 }} sm={{ span: 16 }}>
+              <label htmlFor="Arbeitsunfahigkeit.Frage">
+                16. Bestand eine Arbeitsunfähigkeit?
+              </label>
+              <Controller
+                as={
+                  <div>
+                    <Radio.Group
+                      defaultValue="Nein"
+                      style={{
+                        width: "100%"
+                      }}
+                      buttonStyle="solid"
+                    >
+                      <Radio.Button
+                        value="Ja"
+                        style={{
+                          width: "50%",
+                          textAlign: "center"
+                        }}
+                      >
+                        Ja
+                      </Radio.Button>
+                      <Radio.Button
+                        value="Nein"
+                        style={{
+                          width: "50%",
+                          textAlign: "center"
+                        }}
+                        defaultChecked={true}
+                      >
+                        Nein
+                      </Radio.Button>
+                    </Radio.Group>
+                  </div>
+                }
+                defaultValue="Nein"
+                control={control}
+                name="Arbeitsunfahigkeit.Frage"
+                id="Arbeitsunfahigkeit.Frage"
+              />
+            </Col>
+          </Row>
+        {isArbeitsunfahigkeitFrage === "Ja" ? (
           <Row>
             <Col span={24}>
               <Collapse
@@ -2263,10 +2337,11 @@ const Unfall = ({ onOpenModal }) => {
               </Collapse>
             </Col>
           </Row>
+          ): null}
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
               <label htmlFor="Haushaltsfuhrungsschaden.Frage">
-                17. Ist Ihnen ein Haushaltsführungsschaden entstanden?
+                17. Möchten Sie ein Haushaltführungsschaden einreichen?
               </label>
               <Controller
                 as={
@@ -2404,6 +2479,13 @@ const Unfall = ({ onOpenModal }) => {
                                       moment().endOf("month")
                                     ]
                                   }}
+                                  placeholder={
+                                    [
+                                      "Startdatum einschränkung",
+                                      "Enddatum Einschränkung"
+                                    ]
+                                  }
+
                                 />
                               }
                               control={control}
@@ -2788,6 +2870,7 @@ const Unfall = ({ onOpenModal }) => {
                                   mode="date"
                                   format="YYYY-MM-DD"
                                   showTime={false}
+                                  placeholder="Datum wählen"
                                 />
                               }
                               control={control}
@@ -2935,7 +3018,13 @@ const Unfall = ({ onOpenModal }) => {
         </Col>
       </Row>
       <Row>
-        <Col span={8} offset={8}>
+        <Col xs={{ span: 24 }} md={{ span: 8, offset: 8 }}>
+          <input
+            name="id"
+            value={id}
+            type="hidden"
+            ref={register}
+          />
           <Button
             htmlType="submit"
             style={{
