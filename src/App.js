@@ -10,6 +10,7 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 import Modal from "./components/Modal/Modal";
 import ReactHtmlParser from "react-html-parser";
 import disableScroll from 'disable-scroll';
+import Exclamation from "./icons/Exclamation";
 
 const App = () => {
   let [currentStep, setCurrentStep] = useState(1);
@@ -89,11 +90,7 @@ const App = () => {
         <Row justify="center">
           <Col span={24}>
             <p className="warning">
-              <ExclamationCircleOutlined
-                style={{
-                  marginRight: "5px"
-                }}
-              />
+              <Exclamation/>
               Bitte überprüfen Sie Ihre Eingaben vor dem Absenden auf Richtigkeit!
             </p>
           </Col>

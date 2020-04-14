@@ -13,6 +13,7 @@ import {
   DatePicker
 } from "antd";
 import { InboxOutlined, InfoCircleFilled } from "@ant-design/icons";
+import Plus from "../icons/plus";
 import { useForm, Controller } from "react-hook-form";
 import errorMessages from "../utils/errorMessages";
 import customValidations from "../utils/customValidation";
@@ -29,7 +30,13 @@ import ThreePersons from "../icons/ThreePersons";
 import MaskedInput from "antd-mask-input";
 import NearHeading from "../icons/NearHeading";
 import NearHeading2 from "../icons/NearHeading2";
-import { v1 as uuidv1 } from 'uuid';
+import { v1 as uuidv1 } from "uuid";
+import ZeugenFields from "../components/ZeugenFields/ZeugenFields";
+import AddFieldsButton from "../components/AddFieldsButton/AddFieldsButton";
+import AbschleppkostenFields from "../components/AbschleppkostenFields/AbschleppkostenFields";
+import HeilbehandlungskostenFields from "../components/HeilbehandlungskostenFields/HeilbehandlungskostenFields";
+import GegenstaendeFields from "../components/GegenstaendeFields/GegenstaendeFields";
+import HaushaltsfuhrungsschadenFields from "../components/HaushaltsfuhrungsschadenFields/Haushaltsfuhrungsschaden";
 
 const API_PATH = "/api/contact/unfall.php";
 const { Panel } = Collapse;
@@ -40,7 +47,7 @@ const { RangePicker } = DatePicker;
 const id = uuidv1();
 
 const Unfall = ({ onOpenModal }) => {
-  const { handleSubmit, control, watch, errors, register} = useForm();
+  const { handleSubmit, control, watch, errors, register } = useForm();
 
   const onSubmit = (data, e) => {
     e.preventDefault();
@@ -85,26 +92,14 @@ const Unfall = ({ onOpenModal }) => {
     isSachverstaendigengebuehrenFrage = watch(
       "Sachverstaendigengebuehren.Frage"
     ),
-    isFahrtenFrage = watch("Fahrten.Frage"),
+    // isFahrtenFrage = watch("Fahrten.Frage"),
     isAbschleppkostenFrage = watch("Abschleppkosten.Frage"),
     isVerletztFrage = watch("Verletzt.Frage"),
     isArbeitsunfahigkeitFrage = watch("Arbeitsunfahigkeit.Frage"),
     isHaushaltsfuhrungsschadenFrage = watch("Haushaltsfuhrungsschaden.Frage"),
-    isGegenstaendeFrage = watch("Gegenstaende.Frage");
-
-  //event for check/uncheck checkboxes
-
-  // const [checkboxesState, setcheckboxesState] = useState({
-  //   isSchmerzensgeld: true,
-  //   isHaushaltsfuehrungsschaden: true,
-  //   isGegenstaende: true
-  // });
-  //
-  // const onCheckboxChange = key => {
-  //   const state = { ...checkboxesState };
-  //   state[key] = !state[key];
-  //   setcheckboxesState(state);
-  // };
+    isHaushaltsfuhrungsschadenEingeschrankt=watch("Haushaltsfuhrungsschaden.Eingeschränkt"),
+    isGegenstaendeFrage = watch("Gegenstaende.Frage"),
+    isUnfall_verletztFrage = watch("Unfall_verletzt.Frage");
 
   //event for open/close collapse panel
 
@@ -132,40 +127,44 @@ const Unfall = ({ onOpenModal }) => {
     setPanelState(state);
   };
 
-  //TimePicker
-  // const [timePickerValue, setTimePickerValue] = useState(null);
-  //
-  // const onTimeChange = (time) => {
-  //   console.log(time);
-  //   setTimePickerValue(time);
-  // };
-  //
-  // const onOpenChange = (open) => {
-  //   console.log(open)
-  // };
+  //Add Fields
+
+  const [fieldsCount, setFieldsCount] = useState({
+    Zeugen: 1,
+    Abschleppkosten: 1,
+    Heilbehandlungskosten: 1,
+    Gegenstaende: 1,
+    Haushaltsfuhrungsschaden: 1
+  });
+
+  const addFields = fieldsName => {
+    const newFieldsCount = { ...fieldsCount };
+    newFieldsCount[fieldsName]++;
+    setFieldsCount(newFieldsCount);
+  };
 
   //Drager
 
   const propsForDrager = {
     multiple: true,
-    customRequest: ({file, onSuccess, onError}) => {
+    customRequest: ({ file, onSuccess, onError }) => {
       const formData = new FormData();
-      formData.append('file', file);
-      formData.append('id', id);
+      formData.append("file", file);
+      formData.append("id", id);
       console.log(formData);
       axios({
-        method: 'post',
-        url: '/api/upload/upload.php',
+        method: "post",
+        url: "/api/upload/upload.php",
         headers: {
-          'Content-Type': 'multipart/form-data'
+          "Content-Type": "multipart/form-data"
         },
-        data: formData,
+        data: formData
       })
-        .then(function (response) {
+        .then(function(response) {
           message.success(`${file.name}. Upload war erfolgreich.`);
           onSuccess();
         })
-        .catch(function (error) {
+        .catch(function(error) {
           message.error(`${file.name}. Upload hat nicht geklappt.`);
           onError();
         });
@@ -260,7 +259,7 @@ const Unfall = ({ onOpenModal }) => {
         </Col>
       </Row>
       <Row gutter={32}>
-        <Col span={12}>
+        <Col xs={{ span: 24 }} md={{ span: 12}}>
           <label htmlFor="Unfalldaten.PLZ">
             3. Unfallort / PLZ <Required />
           </label>
@@ -291,7 +290,7 @@ const Unfall = ({ onOpenModal }) => {
             </span>
           )}
         </Col>
-        <Col span={12}>
+        <Col xs={{ span: 24 }} md={{ span: 12}}>
           <label htmlFor="Unfalldaten.Stadt">
             4. Unfallort / Stadt <Required />
           </label>
@@ -386,7 +385,7 @@ const Unfall = ({ onOpenModal }) => {
                 <Row>
                   <Col span={23} offset={1} className="col-border-left">
                     <Row gutter={32}>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallverursacher.Vorname">
                           Vorname
                         </label>
@@ -423,7 +422,7 @@ const Unfall = ({ onOpenModal }) => {
                             </span>
                           )}
                       </Col>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallverursacher.Nachname">
                           Nachname
                         </label>
@@ -474,7 +473,7 @@ const Unfall = ({ onOpenModal }) => {
                       </Col>
                     </Row>
                     <Row gutter={32}>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallverursacher.PLZ">PLZ</label>
                         <Controller
                           as={
@@ -505,7 +504,7 @@ const Unfall = ({ onOpenModal }) => {
                             </span>
                           )}
                       </Col>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallverursacher.Stadt">Stadt</label>
                         <Controller
                           as={<Input placeholder="Stadt" />}
@@ -629,7 +628,7 @@ const Unfall = ({ onOpenModal }) => {
                       </Col>
                     </Row>
                     <Row gutter={32}>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallaufnahme.PLZ">PLZ</label>
                         <Controller
                           as={
@@ -659,7 +658,7 @@ const Unfall = ({ onOpenModal }) => {
                           </span>
                         )}
                       </Col>
-                      <Col span={12}>
+                      <Col xs={{ span: 24 }} md={{ span: 12}}>
                         <label htmlFor="Unfallaufnahme.Stadt">Stadt</label>
                         <Controller
                           as={<Input placeholder="Stadt" />}
@@ -670,7 +669,7 @@ const Unfall = ({ onOpenModal }) => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col span={10}>
+                      <Col xs={{ span: 24 }} md={{ span: 10}}>
                         <label htmlFor="Unfallaufnahme.Dok">
                           Polizeibericht hochladen
                         </label>
@@ -760,120 +759,22 @@ const Unfall = ({ onOpenModal }) => {
                 key={1}
               >
                 <Row>
-                  <Col span={23} offset={1} className="col-border-left">
-                    <Row gutter={32}>
-                      <Col span={12}>
-                        <label htmlFor="Zeugen.Vorname">Vorname</label>
-                        <Controller
-                          as={
-                            <Input
-                              className={
-                                errors.Zeugen &&
-                                errors.Zeugen.Vorname &&
-                                "input-error"
-                              }
-                              placeholder="Vorname"
-                            />
-                          }
-                          defaultValue=""
-                          control={control}
-                          name="Zeugen.Vorname"
-                          id="Zeugen.Vorname"
-                          rules={{
-                            pattern: {
-                              value: /^[A-Za-z \u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]+$/i,
-                              message: errorMessages.specialChars()
-                            }
-                          }}
-                        />
-                        {errors.Zeugen && errors.Zeugen.Vorname && (
-                          <span className="message-error">
-                            {errors.Zeugen.Vorname.message}
-                          </span>
-                        )}
-                      </Col>
-                      <Col span={12}>
-                        <label htmlFor="Zeugen.Nachname">Nachname</label>
-                        <Controller
-                          as={
-                            <Input
-                              className={
-                                errors.Zeugen &&
-                                errors.Zeugen.Nachname &&
-                                "input-error"
-                              }
-                              placeholder="Nachname"
-                            />
-                          }
-                          rules={{
-                            pattern: {
-                              value: /^[A-Za-z \u00E4\u00F6\u00FC\u00C4\u00D6\u00DC\u00df]+$/i,
-                              message: errorMessages.specialChars()
-                            }
-                          }}
-                          control={control}
-                          name="Zeugen.Nachname"
-                          id="Zeugen.Nachname"
-                        />
-                        {errors.Zeugen && errors.Zeugen.Nachname && (
-                          <span className="message-error">
-                            {errors.Zeugen.Nachname.message}
-                          </span>
-                        )}
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                        <label htmlFor="Zeugen.StrNr">Straße & Nr.</label>
-                        <Controller
-                          as={<Input placeholder="Straße & Nr." />}
-                          control={control}
-                          name="Zeugen.StrNr"
-                          id="Zeugen.StrNr"
-                        />
-                      </Col>
-                    </Row>
-                    <Row gutter={32}>
-                      <Col span={12}>
-                        <label htmlFor="Zeugen.PLZ">PLZ</label>
-                        <Controller
-                          as={
-                            <MaskedInput
-                              className={
-                                errors.Zeugen &&
-                                errors.Zeugen.PLZ &&
-                                "input-error"
-                              }
-                              placeholder="PLZ code"
-                              size={5}
-                              mask="11111"
-                            />
-                          }
-                          control={control}
-                          name="Zeugen.PLZ"
-                          id="Zeugen.PLZ"
-                          rules={{
-                            validate: {
-                              inputPLZCorrect: customValidations.isIncorrectPLZ
-                            }
-                          }}
-                        />
-                        {errors.Zeugen && errors.Zeugen.PLZ && (
-                          <span className="message-error">
-                            {errors.Zeugen.PLZ.message}
-                          </span>
-                        )}
-                      </Col>
-                      <Col span={12}>
-                        <label htmlFor="Zeugen.Stadt">Stadt</label>
-                        <Controller
-                          as={<Input placeholder="Stadt" />}
-                          control={control}
-                          name="Zeugen.Stadt"
-                          id="Zeugen.Stadt"
-                        />
-                      </Col>
-                    </Row>
+                  <Col
+                    span={23}
+                    offset={1}
+                    className="col-border-left border-97"
+                  >
+                    <ZeugenFields
+                      fieldsCount={fieldsCount.Zeugen}
+                      control={control}
+                      errors={errors}
+                    />
+                    <AddFieldsButton
+                      onClick={() => {
+                        addFields("Zeugen");
+                      }}
+                      text="Weiteren Zeugen hinzufügen"
+                    />
                   </Col>
                 </Row>
               </Panel>
@@ -1140,7 +1041,7 @@ const Unfall = ({ onOpenModal }) => {
                           </Col>
                         </Row>
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <label htmlFor="Fahrzeugschaden.Besteatigung">
                               Bestätigungsschreiben
                             </label>
@@ -1282,7 +1183,7 @@ const Unfall = ({ onOpenModal }) => {
                         <Row>
                           <Col span={23} offset={1} className="col-border-left">
                             <Row>
-                              <Col span={10}>
+                              <Col xs={{ span: 24 }} md={{ span: 10}}>
                                 <label htmlFor="Fahrzeugschaden.Nachweis">
                                   Nachweise für Reperatur
                                 </label>
@@ -1293,7 +1194,8 @@ const Unfall = ({ onOpenModal }) => {
                                         <InboxOutlined />
                                       </p>
                                       <p className="ant-upload-text">
-                                        Dokument hierher ziehen oder hier klicken
+                                        Dokument hierher ziehen oder hier
+                                        klicken
                                       </p>
                                       <p className="ant-upload-hint">
                                         Einzel- oder Massen-Upload.
@@ -1466,7 +1368,7 @@ const Unfall = ({ onOpenModal }) => {
                     <Row>
                       <Col span={23} offset={1} className="col-border-left">
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <label htmlFor="Kostenvoranschlag.Dok">
                               Dokument Kostenvoranschlag <Required />
                             </label>
@@ -1491,7 +1393,7 @@ const Unfall = ({ onOpenModal }) => {
                           </Col>
                         </Row>
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <label htmlFor="Kostenvoranschlag.Foto">
                               Upload Schadenfotos <Required />
                             </label>
@@ -1516,7 +1418,7 @@ const Unfall = ({ onOpenModal }) => {
                           </Col>
                         </Row>
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <div className="message-info">
                               <InfoCircleFilled />
                               Für eine zügigere Bearbeitung können Sie folgende
@@ -1564,7 +1466,7 @@ const Unfall = ({ onOpenModal }) => {
                     <Row>
                       <Col span={23} offset={1} className="col-border-left">
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <label htmlFor="Gutachten.Gutachten">
                               Gutachten <Required />
                             </label>
@@ -1589,7 +1491,7 @@ const Unfall = ({ onOpenModal }) => {
                           </Col>
                         </Row>
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <div className="message-info">
                               <InfoCircleFilled />
                               Für eine zügigere Bearbeitung können Sie folgende
@@ -1712,7 +1614,8 @@ const Unfall = ({ onOpenModal }) => {
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
               <label htmlFor="Sachverstaendigengebuehren.Frage">
-                12. Möchten Sie Sachverständigengebühren oder Kosten für den Kostenvoranschlag einreichen?
+                12. Möchten Sie Sachverständigengebühren oder Kosten für den
+                Kostenvoranschlag einreichen?
               </label>
               <Controller
                 as={
@@ -1774,7 +1677,7 @@ const Unfall = ({ onOpenModal }) => {
                     <Row>
                       <Col span={23} offset={1} className="col-border-left">
                         <Row>
-                          <Col span={10}>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
                             <label htmlFor="Sachverstaendigengebuehren.Rechnung">
                               Rechnung Gutachter (falls nicht in Gutachten)
                             </label>
@@ -1822,124 +1725,9 @@ const Unfall = ({ onOpenModal }) => {
       ) : null}
       <Row>
         <Col span={24}>
-          <Heading
-            title="Weitere Schadenpositionen"
-            icon={<NearHeading2 />}
-          />
+          <Heading title="Weitere Schadenpositionen" icon={<NearHeading2 />} />
         </Col>
       </Row>
-      {/*<Row>*/}
-      {/*  <Col xs={{ span: 24 }} sm={{ span: 16 }}>*/}
-      {/*    <label htmlFor="Fahrten.Frage">*/}
-      {/*      13. Möchten Sie Heilbehandlungskosten einreichen?*/}
-      {/*    </label>*/}
-      {/*    <Controller*/}
-      {/*      as={*/}
-      {/*        <div>*/}
-      {/*          <Radio.Group*/}
-      {/*            defaultValue="Nein"*/}
-      {/*            style={{*/}
-      {/*              width: "100%"*/}
-      {/*            }}*/}
-      {/*            buttonStyle="solid"*/}
-      {/*          >*/}
-      {/*            <Radio.Button*/}
-      {/*              value="Ja"*/}
-      {/*              style={{*/}
-      {/*                width: "50%",*/}
-      {/*                textAlign: "center"*/}
-      {/*              }}*/}
-      {/*            >*/}
-      {/*              Ja*/}
-      {/*            </Radio.Button>*/}
-      {/*            <Radio.Button*/}
-      {/*              value="Nein"*/}
-      {/*              style={{*/}
-      {/*                width: "50%",*/}
-      {/*                textAlign: "center"*/}
-      {/*              }}*/}
-      {/*              defaultChecked={true}*/}
-      {/*            >*/}
-      {/*              Nein*/}
-      {/*            </Radio.Button>*/}
-      {/*          </Radio.Group>*/}
-      {/*        </div>*/}
-      {/*      }*/}
-      {/*      defaultValue="Nein"*/}
-      {/*      control={control}*/}
-      {/*      name="Fahrten.Frage"*/}
-      {/*      id="Fahrten.Frage"*/}
-      {/*    />*/}
-      {/*  </Col>*/}
-      {/*</Row>*/}
-      {/*{isFahrtenFrage === "Ja" ? (*/}
-      {/*  <Row>*/}
-      {/*    <Col span={24}>*/}
-      {/*      <Collapse*/}
-      {/*        bordered={false}*/}
-      {/*        defaultActiveKey={["1"]}*/}
-      {/*        onChange={() => {*/}
-      {/*          onPanelChange("isFahrtenOpen");*/}
-      {/*        }}*/}
-      {/*      >*/}
-      {/*        <Panel*/}
-      {/*          header={panelState.isFahrtenOpen ? "Ausblenden" : "Zeigen"}*/}
-      {/*          key={1}*/}
-      {/*        >*/}
-      {/*          <Row>*/}
-      {/*            <Col span={23} offset={1} className="col-border-left">*/}
-      {/*              <Row>*/}
-      {/*                <Col span={10}>*/}
-      {/*                  <label htmlFor="Fahrten.Rechnung">*/}
-      {/*                    Rechnung <Required />*/}
-      {/*                  </label>*/}
-      {/*                  <Controller*/}
-      {/*                    as={*/}
-      {/*                      <Dragger {...propsForDrager}>*/}
-      {/*                        <p className="ant-upload-drag-icon">*/}
-      {/*                          <InboxOutlined />*/}
-      {/*                        </p>*/}
-      {/*                        <p className="ant-upload-text">*/}
-      {/*                          Dokument hierher ziehen oder hier klicken*/}
-      {/*                        </p>*/}
-      {/*                        <p className="ant-upload-hint">*/}
-      {/*                          Einzel- oder Massen-Upload.*/}
-      {/*                        </p>*/}
-      {/*                      </Dragger>*/}
-      {/*                    }*/}
-      {/*                    control={control}*/}
-      {/*                    name="Fahrten.Rechnung"*/}
-      {/*                    id="Fahrten.Rechnung"*/}
-      {/*                  />*/}
-      {/*                </Col>*/}
-      {/*              </Row>*/}
-      {/*              <Row>*/}
-      {/*                <Col span={10}>*/}
-      {/*                  <div className="message-info">*/}
-      {/*                    <InfoCircleFilled />*/}
-      {/*                    Für eine zügigere Bearbeitung können Sie folgende*/}
-      {/*                    Daten einpflegen (optional)*/}
-      {/*                  </div>*/}
-      {/*                </Col>*/}
-      {/*              </Row>*/}
-      {/*              <Row>*/}
-      {/*                <Col span={24}>*/}
-      {/*                  <label htmlFor="Fahrten.Rechnung.Summe">Summe</label>*/}
-      {/*                  <Controller*/}
-      {/*                    as={<Input placeholder="Summe" />}*/}
-      {/*                    control={control}*/}
-      {/*                    name="Fahrten.Rechnung.Summe"*/}
-      {/*                    id="Fahrten.Rechnung.Summe"*/}
-      {/*                  />*/}
-      {/*                </Col>*/}
-      {/*              </Row>*/}
-      {/*            </Col>*/}
-      {/*          </Row>*/}
-      {/*        </Panel>*/}
-      {/*      </Collapse>*/}
-      {/*    </Col>*/}
-      {/*  </Row>*/}
-      {/*) : null}*/}
       <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
           <label htmlFor="Abschleppkosten.Frage">
@@ -2004,53 +1792,18 @@ const Unfall = ({ onOpenModal }) => {
               >
                 <Row>
                   <Col span={23} offset={1} className="col-border-left">
-                    <Row>
-                      <Col span={10}>
-                        <label htmlFor="Abschleppkosten.Rechnung.Rechnung">
-                          Rechnung <Required />
-                        </label>
-                        <Controller
-                          as={
-                            <Dragger {...propsForDrager}>
-                              <p className="ant-upload-drag-icon">
-                                <InboxOutlined />
-                              </p>
-                              <p className="ant-upload-text">
-                                Dokument hierher ziehen oder hier klicken
-                              </p>
-                              <p className="ant-upload-hint">
-                                Einzel- oder Massen-Upload.
-                              </p>
-                            </Dragger>
-                          }
-                          control={control}
-                          name="Abschleppkosten.Rechnung.Rechnung"
-                          id="Abschleppkosten.Rechnung.Rechnung"
-                        />
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={10}>
-                        <div className="message-info">
-                          <InfoCircleFilled />
-                          Für eine zügigere Bearbeitung können Sie folgende
-                          Daten einpflegen (optional)
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                        <label htmlFor="Abschleppkosten.Rechnung.Summe">
-                          Summe der Rechnung
-                        </label>
-                        <Controller
-                          as={<Input placeholder="Summe der Rechnung" />}
-                          control={control}
-                          name="Abschleppkosten.Rechnung.Summe"
-                          id="Abschleppkosten.Rechnung.Summe"
-                        />
-                      </Col>
-                    </Row>
+                    <AbschleppkostenFields
+                      fieldsCount={fieldsCount.Abschleppkosten}
+                      control={control}
+                      errors={errors}
+                      propsForDrager={propsForDrager}
+                    />
+                    <AddFieldsButton
+                      onClick={() => {
+                        addFields("Abschleppkosten");
+                      }}
+                      text="Weitere Fahrtkosten hochladen"
+                    />
                   </Col>
                 </Row>
               </Panel>
@@ -2060,7 +1813,7 @@ const Unfall = ({ onOpenModal }) => {
       ) : null}
       <Row>
         <Col xs={{ span: 24 }} sm={{ span: 16 }}>
-          <label htmlFor="Abschleppkosten.Frage">
+          <label htmlFor="Unfall_verletzt.Frage">
             14. Wurden Sie durch den Unfall verletzt?
           </label>
           <Controller
@@ -2097,12 +1850,12 @@ const Unfall = ({ onOpenModal }) => {
             }
             defaultValue="Nein"
             control={control}
-            name="Abschleppkosten.Frage"
-            id="Abschleppkosten.Frage"
+            name="Unfall_verletzt.Frage"
+            id="Unfall_verletzt.Frage"
           />
         </Col>
       </Row>
-      {isAbschleppkostenFrage === "Ja" ? (
+      {isUnfall_verletztFrage === "Ja" ? (
         <>
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
@@ -2148,76 +1901,76 @@ const Unfall = ({ onOpenModal }) => {
               />
             </Col>
           </Row>
-        {isVerletztFrage === "Ja" ? (
-          <Row>
-            <Col span={24}>
-              <Collapse
-                bordered={false}
-                defaultActiveKey={["1"]}
-                onChange={() => {
-                  onPanelChange("isVerletztOpen");
-                }}
-              >
-                <Panel
-                  header={panelState.isVerletztOpen ? "Ausblenden" : "Zeigen"}
-                  key={1}
+          {isVerletztFrage === "Ja" ? (
+            <Row>
+              <Col span={24}>
+                <Collapse
+                  bordered={false}
+                  defaultActiveKey={["1"]}
+                  onChange={() => {
+                    onPanelChange("isVerletztOpen");
+                  }}
                 >
-                  <Row>
-                    <Col span={23} offset={1} className="col-border-left">
-                      <Row>
-                        <Col span={10}>
-                          <label htmlFor="Verletzt.Rechnung">Rechnung</label>
-                          <Controller
-                            as={
-                              <Dragger {...propsForDrager}>
-                                <p className="ant-upload-drag-icon">
-                                  <InboxOutlined />
-                                </p>
-                                <p className="ant-upload-text">
-                                  Dokument hierher ziehen oder hier klicken
-                                </p>
-                                <p className="ant-upload-hint">
-                                  Einzel- oder Massen-Upload.
-                                </p>
-                              </Dragger>
-                            }
-                            control={control}
-                            name="Verletzt.Rechnung"
-                            id="Verletzt.Rechnung"
-                          />
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col span={10}>
-                          <div className="message-info">
-                            <InfoCircleFilled />
-                            Für eine zügigere Bearbeitung können Sie folgende
-                            Daten einpflegen (optional)
-                          </div>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col span={24}>
-                          <label htmlFor="Verletzt.Verletzungen">
-                            Welche Verletzungen liegen vor? Primärverletzung?
-                          </label>
-                          <Controller
-                            as={
-                              <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
-                            }
-                            control={control}
-                            name="Verletzt.Verletzungen "
-                            id="Verletzt.Verletzungen "
-                          />
-                        </Col>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Panel>
-              </Collapse>
-            </Col>
-          </Row>
-        ) : null}
+                  <Panel
+                    header={panelState.isVerletztOpen ? "Ausblenden" : "Zeigen"}
+                    key={1}
+                  >
+                    <Row>
+                      <Col span={23} offset={1} className="col-border-left">
+                        <Row>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
+                            <label htmlFor="Verletzt.Rechnung">Rechnung</label>
+                            <Controller
+                              as={
+                                <Dragger {...propsForDrager}>
+                                  <p className="ant-upload-drag-icon">
+                                    <InboxOutlined />
+                                  </p>
+                                  <p className="ant-upload-text">
+                                    Dokument hierher ziehen oder hier klicken
+                                  </p>
+                                  <p className="ant-upload-hint">
+                                    Einzel- oder Massen-Upload.
+                                  </p>
+                                </Dragger>
+                              }
+                              control={control}
+                              name="Verletzt.Rechnung"
+                              id="Verletzt.Rechnung"
+                            />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
+                            <div className="message-info">
+                              <InfoCircleFilled />
+                              Für eine zügigere Bearbeitung können Sie folgende
+                              Daten einpflegen (optional)
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={24}>
+                            <label htmlFor="Verletzt.Verletzungen">
+                              Welche Verletzungen liegen vor? Primärverletzung?
+                            </label>
+                            <Controller
+                              as={
+                                <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
+                              }
+                              control={control}
+                              name="Verletzt.Verletzungen "
+                              id="Verletzt.Verletzungen "
+                            />
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Panel>
+                </Collapse>
+              </Col>
+            </Row>
+          ) : null}
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
               <label htmlFor="Arbeitsunfahigkeit.Frage">
@@ -2262,82 +2015,82 @@ const Unfall = ({ onOpenModal }) => {
               />
             </Col>
           </Row>
-        {isArbeitsunfahigkeitFrage === "Ja" ? (
-          <Row>
-            <Col span={24}>
-              <Collapse
-                bordered={false}
-                defaultActiveKey={["1"]}
-                onChange={() => {
-                  onPanelChange("isArbeitsunfahigkeitOpen");
-                }}
-              >
-                <Panel
-                  header={
-                    panelState.isArbeitsunfahigkeitOpen
-                      ? "Ausblenden"
-                      : "Zeigen"
-                  }
-                  key={1}
+          {isArbeitsunfahigkeitFrage === "Ja" ? (
+            <Row>
+              <Col span={24}>
+                <Collapse
+                  bordered={false}
+                  defaultActiveKey={["1"]}
+                  onChange={() => {
+                    onPanelChange("isArbeitsunfahigkeitOpen");
+                  }}
                 >
-                  <Row>
-                    <Col span={23} offset={1} className="col-border-left">
-                      <Row>
-                        <Col span={10}>
-                          <label htmlFor="Schmerzensgeld.Dok">
-                            Ärztliche Unterlagen
-                          </label>
-                          <Controller
-                            as={
-                              <Dragger {...propsForDrager}>
-                                <p className="ant-upload-drag-icon">
-                                  <InboxOutlined />
-                                </p>
-                                <p className="ant-upload-text">
-                                  Dokument hierher ziehen oder hier klicken
-                                </p>
-                                <p className="ant-upload-hint">
-                                  Einzel- oder Massen-Upload.
-                                </p>
-                              </Dragger>
-                            }
-                            control={control}
-                            name="Schmerzensgeld.Dok"
-                            id="Schmerzensgeld.Dok"
-                          />
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col span={10}>
-                          <div className="message-info">
-                            <InfoCircleFilled />
-                            Für eine zügigere Bearbeitung können Sie folgende
-                            Daten einpflegen (optional)
-                          </div>
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col span={24}>
-                          <label htmlFor="Schmerzensgeld.Verletzungen">
-                            Welche Verletzungen liegen vor? Primärverletzung?
-                          </label>
-                          <Controller
-                            as={
-                              <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
-                            }
-                            control={control}
-                            name="Schmerzensgeld.Verletzungen"
-                            id="Schmerzensgeld.Verletzungen"
-                          />
-                        </Col>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Panel>
-              </Collapse>
-            </Col>
-          </Row>
-          ): null}
+                  <Panel
+                    header={
+                      panelState.isArbeitsunfahigkeitOpen
+                        ? "Ausblenden"
+                        : "Zeigen"
+                    }
+                    key={1}
+                  >
+                    <Row>
+                      <Col span={23} offset={1} className="col-border-left">
+                        <Row>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
+                            <label htmlFor="Schmerzensgeld.Dok">
+                              Ärztliche Unterlagen
+                            </label>
+                            <Controller
+                              as={
+                                <Dragger {...propsForDrager}>
+                                  <p className="ant-upload-drag-icon">
+                                    <InboxOutlined />
+                                  </p>
+                                  <p className="ant-upload-text">
+                                    Dokument hierher ziehen oder hier klicken
+                                  </p>
+                                  <p className="ant-upload-hint">
+                                    Einzel- oder Massen-Upload.
+                                  </p>
+                                </Dragger>
+                              }
+                              control={control}
+                              name="Schmerzensgeld.Dok"
+                              id="Schmerzensgeld.Dok"
+                            />
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col xs={{ span: 24 }} md={{ span: 10}}>
+                            <div className="message-info">
+                              <InfoCircleFilled />
+                              Für eine zügigere Bearbeitung können Sie folgende
+                              Daten einpflegen (optional)
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col span={24}>
+                            <label htmlFor="Schmerzensgeld.Verletzungen">
+                              Welche Verletzungen liegen vor? Primärverletzung?
+                            </label>
+                            <Controller
+                              as={
+                                <Input placeholder="Welche Verletzungen liegen vor? Primärverletzung?" />
+                              }
+                              control={control}
+                              name="Schmerzensgeld.Verletzungen"
+                              id="Schmerzensgeld.Verletzungen"
+                            />
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Panel>
+                </Collapse>
+              </Col>
+            </Row>
+          ) : null}
           <Row>
             <Col xs={{ span: 24 }} sm={{ span: 16 }}>
               <label htmlFor="Haushaltsfuhrungsschaden.Frage">
@@ -2447,121 +2200,21 @@ const Unfall = ({ onOpenModal }) => {
                             />
                           </Col>
                         </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Haushaltsfuhrungsschaden.Tatigkeit">
-                              Welche Haushaltliche Tätigkeit konnten Sie nicht
-                              mehr wahrnehmen?
-                            </label>
-                            <Controller
-                              as={
-                                <Input placeholder="Individuelle Faktoren Einschränkung" />
-                              }
+                        {isHaushaltsfuhrungsschadenEingeschrankt === "Ja" ? (
+                          <div>
+                            <HaushaltsfuhrungsschadenFields
+                              fieldsCount={fieldsCount.Haushaltsfuhrungsschaden}
                               control={control}
-                              name="Haushaltsfuhrungsschaden.Tatigkeit"
-                              id="Haushaltsfuhrungsschaden.Tatigkeit"
+                              errors={errors}
                             />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Haushaltsfuhrungsschaden.DatumVon">
-                              Startdatum einschränkung - Enddatum Einschränkung
-                            </label>
-                            <br />
-                            <Controller
-                              as={
-                                <RangePicker
-                                  ranges={{
-                                    Today: [moment(), moment()],
-                                    "This Month": [
-                                      moment().startOf("month"),
-                                      moment().endOf("month")
-                                    ]
-                                  }}
-                                  placeholder={
-                                    [
-                                      "Startdatum einschränkung",
-                                      "Enddatum Einschränkung"
-                                    ]
-                                  }
-
-                                />
-                              }
-                              control={control}
-                              name="Haushaltsfuhrungsschaden.DatumVon"
-                              id="Haushaltsfuhrungsschaden.DatumVon"
+                            <AddFieldsButton
+                              onClick={() => {
+                                addFields("Haushaltsfuhrungsschaden");
+                              }}
+                              text="Weiteren Zeitraum angeben"
                             />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Haushaltsfuehrungsschaden.Zeitraum.Angabe">
-                              Grobe Schätzung
-                            </label>
-                            <Controller
-                              as={
-                                <Select
-                                  defaultValue="100%"
-                                  style={{ width: "100%" }}
-                                >
-                                  <Option value="10%">10%</Option>
-                                  <Option value="20%">20%</Option>
-                                  <Option value="30%">30%</Option>
-                                  <Option value="40%">40%</Option>
-                                  <Option value="50%">50%</Option>
-                                  <Option value="60%">60%</Option>
-                                  <Option value="70%">70%</Option>
-                                  <Option value="80%">80%</Option>
-                                  <Option value="90%">90%</Option>
-                                  <Option value="100%">100%</Option>
-                                </Select>
-                              }
-                              control={control}
-                              name="Haushaltsfuehrungsschaden.Zeitraum.Angabe"
-                              id="Haushaltsfuehrungsschaden.Zeitraum.Angabe"
-                              defaultValue="100%"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Haushaltsfuehrungsschaden.Zeitraum.a">
-                              Haushaltsgröße
-                            </label>
-                            <Controller
-                              as={
-                                <Select
-                                  defaultValue="100%"
-                                  style={{ width: "100%" }}
-                                >
-                                  <Option value="1 Person">
-                                    <OnePerson /> 1 Person
-                                  </Option>
-                                  <Option value="2 Personen (Eheleute)">
-                                    <TwoPersons /> 2 Personen (Eheleute)
-                                  </Option>
-                                  <Option value="3 Personen (Eheleute + Kind)">
-                                    <ThreePersons /> 3 Personen (Eheleute +
-                                    Kind)
-                                  </Option>
-                                  <Option value="4 Personen (Eheleute + 2 Kinder)">
-                                    <ThreePersons /> 4 Personen (Eheleute + 2
-                                    Kinder)
-                                  </Option>
-                                  <Option value="5 Personen (Eheleute + 3 Kinder)">
-                                    <ThreePersons /> 5 Personen (Eheleute + 3
-                                    Kinder)
-                                  </Option>
-                                </Select>
-                              }
-                              control={control}
-                              name="Haushaltsfuehrungsschaden.Zeitraum.a"
-                              id="Haushaltsfuehrungsschaden.Zeitraum.a"
-                              defaultValue="1 Person"
-                            />
-                          </Col>
-                        </Row>
+                          </div>
+                          ) : null}
                       </Col>
                     </Row>
                   </Panel>
@@ -2633,68 +2286,18 @@ const Unfall = ({ onOpenModal }) => {
                   >
                     <Row>
                       <Col span={23} offset={1} className="col-border-left">
-                        <Row>
-                          <Col span={10}>
-                            <label htmlFor="Heilbehandlungskosten.Rechnung">
-                              Rechnung
-                            </label>
-                            <Controller
-                              as={
-                                <Dragger {...propsForDrager}>
-                                  <p className="ant-upload-drag-icon">
-                                    <InboxOutlined />
-                                  </p>
-                                  <p className="ant-upload-text">
-                                    Dokument hierher ziehen oder hier klicken
-                                  </p>
-                                  <p className="ant-upload-hint">
-                                    Einzel- oder Massen-Upload.
-                                  </p>
-                                </Dragger>
-                              }
-                              control={control}
-                              name="Heilbehandlungskosten.Rechnung"
-                              id="Heilbehandlungskosten.Rechnung"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={10}>
-                            <div className="message-info">
-                              <InfoCircleFilled />
-                              Für eine zügigere Bearbeitung können Sie folgende
-                              Daten einpflegen (optional)
-                            </div>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Heilbehandlungskosten.Leistung">
-                              Art der Leistung (z.B. Arzneimittelkosten)
-                            </label>
-                            <Controller
-                              as={
-                                <Input placeholder="Art der Leistung (z.B. Arzneimittelkosten)" />
-                              }
-                              control={control}
-                              name="Heilbehandlungskosten.Leistung"
-                              id="Heilbehandlungskosten.Leistung"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Heilbehandlungskosten.Summe">
-                              Summe der Rechnung
-                            </label>
-                            <Controller
-                              as={<Input placeholder="Summe der Rechnung" />}
-                              control={control}
-                              name="Heilbehandlungskosten.Summe"
-                              id="Heilbehandlungskosten.Summe"
-                            />
-                          </Col>
-                        </Row>
+                        <HeilbehandlungskostenFields
+                          fieldsCount={fieldsCount.Heilbehandlungskosten}
+                          control={control}
+                          errors={errors}
+                          propsForDrager={propsForDrager}
+                        />
+                        <AddFieldsButton
+                          onClick={() => {
+                            addFields("Heilbehandlungskosten");
+                          }}
+                          text="Weitere Heilbehandlungskosten anmelden"
+                        />
                       </Col>
                     </Row>
                   </Panel>
@@ -2769,116 +2372,18 @@ const Unfall = ({ onOpenModal }) => {
                         offset={1}
                         className="col-border-left border-97"
                       >
-                        <Row>
-                          <Col span={10}>
-                            <label htmlFor="Gegenstaende.Gegenstaende.Rechnung">
-                              Rechnung
-                            </label>
-                            <Controller
-                              as={
-                                <Dragger {...propsForDrager}>
-                                  <p className="ant-upload-drag-icon">
-                                    <InboxOutlined />
-                                  </p>
-                                  <p className="ant-upload-text">
-                                    Dokument hierher ziehen oder hier klicken
-                                  </p>
-                                  <p className="ant-upload-hint">
-                                    Einzel- oder Massen-Upload.
-                                  </p>
-                                </Dragger>
-                              }
-                              control={control}
-                              name="Gegenstaende.Gegenstaende.Rechnung"
-                              id="Gegenstaende.Gegenstaende.Rechnung"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={10}>
-                            <div className="message-info">
-                              <InfoCircleFilled />
-                              Für eine zügigere Bearbeitung können Sie folgende
-                              Daten einpflegen (optional)
-                            </div>
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={10}>
-                            <label htmlFor="Gegenstaende.Gegenstaende.Foto">
-                              Foto Gegenstand
-                            </label>
-                            <Controller
-                              as={
-                                <Dragger {...propsForDrager}>
-                                  <p className="ant-upload-drag-icon">
-                                    <InboxOutlined />
-                                  </p>
-                                  <p className="ant-upload-text">
-                                    Dokument hierher ziehen oder hier klicken
-                                  </p>
-                                  <p className="ant-upload-hint">
-                                    Einzel- oder Massen-Upload.
-                                  </p>
-                                </Dragger>
-                              }
-                              control={control}
-                              name="Gegenstaende.Gegenstaende.Foto"
-                              id="Gegenstaende.Gegenstaende.Foto"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Gegenstaende.Gegenstaende.Bezeichnung">
-                              Bezeichnung Gegenstand
-                            </label>
-                            <Controller
-                              as={
-                                <Input placeholder="Bezeichnung Gegenstand" />
-                              }
-                              control={control}
-                              name="Gegenstaende.Gegenstaende.Bezeichnung"
-                              id="Gegenstaende.Gegenstaende.Bezeichnung"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Gegenstaende.Gegenstaende.Preis">
-                              Kaufpreis ca.
-                            </label>
-                            <Controller
-                              as={<Input placeholder="Reparaturkosten" />}
-                              control={control}
-                              name="Gegenstaende.Gegenstaende.Preis"
-                              id="Gegenstaende.Gegenstaende.Preis"
-                            />
-                          </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <label htmlFor="Gegenstaende.Gegenstaende.Datum">
-                              Kaufdatum ca.
-                            </label>
-                            <Controller
-                              as={
-                                <DatePicker
-                                  style={{
-                                    width: "100%"
-                                  }}
-                                  mode="date"
-                                  format="YYYY-MM-DD"
-                                  showTime={false}
-                                  placeholder="Datum wählen"
-                                />
-                              }
-                              control={control}
-                              name="Gegenstaende.Gegenstaende.Datum"
-                              id="Gegenstaende.Gegenstaende.Datum"
-                            />
-                          </Col>
-                        </Row>
+                        <GegenstaendeFields
+                          fieldsCount={fieldsCount.Gegenstaende}
+                          control={control}
+                          errors={errors}
+                          propsForDrager={propsForDrager}
+                        />
+                        <AddFieldsButton
+                          onClick={() => {
+                            addFields("Gegenstaende");
+                          }}
+                          text="Weiteren Kosten hochladen"
+                        />
                       </Col>
                     </Row>
                   </Panel>
@@ -2889,7 +2394,7 @@ const Unfall = ({ onOpenModal }) => {
         </>
       ) : null}
       <Row>
-        <Col span={10}>
+        <Col xs={{ span: 24 }} md={{ span: 10}} >
           <label htmlFor="Unfall.Vollmacht">20. Vollmacht</label>
           <Controller
             as={
@@ -2900,9 +2405,7 @@ const Unfall = ({ onOpenModal }) => {
                 <p className="ant-upload-text">
                   Dokument hierher ziehen oder hier klicken
                 </p>
-                <p className="ant-upload-hint">
-                  Einzel- oder Massen-Upload.
-                </p>
+                <p className="ant-upload-hint">Einzel- oder Massen-Upload.</p>
               </Dragger>
             }
             control={control}
@@ -2912,7 +2415,7 @@ const Unfall = ({ onOpenModal }) => {
         </Col>
       </Row>
       <Row>
-        <Col span={10}>
+        <Col xs={{ span: 24 }} md={{ span: 10}}>
           <label htmlFor="Unfall.Weiteres.Dok">21. Weiteres Dokument</label>
           <Controller
             as={
@@ -2923,9 +2426,7 @@ const Unfall = ({ onOpenModal }) => {
                 <p className="ant-upload-text">
                   Dokument hierher ziehen oder hier klicken
                 </p>
-                <p className="ant-upload-hint">
-                  Einzel- oder Massen-Upload.
-                </p>
+                <p className="ant-upload-hint">Einzel- oder Massen-Upload.</p>
               </Dragger>
             }
             control={control}
@@ -2955,9 +2456,7 @@ const Unfall = ({ onOpenModal }) => {
               <Input
                 placeholder="Ihre E-mail"
                 className={
-                  errors.Unfall &&
-                  errors.Unfall.Email &&
-                  "input-error"
+                  errors.Unfall && errors.Unfall.Email && "input-error"
                 }
               />
             }
@@ -2973,9 +2472,7 @@ const Unfall = ({ onOpenModal }) => {
             }}
           />
           {errors.Unfall && errors.Unfall.Email && (
-            <span className="message-error">
-              {errors.Unfall.Email.message}
-            </span>
+            <span className="message-error">{errors.Unfall.Email.message}</span>
           )}
         </Col>
       </Row>
@@ -2989,9 +2486,7 @@ const Unfall = ({ onOpenModal }) => {
               <Input
                 placeholder="Ihr Lawnow Aktenzeichen (per Mail an Sie gesenet)"
                 className={
-                  errors.Unfall &&
-                  errors.Unfall.Aktenzeichen &&
-                  "input-error"
+                  errors.Unfall && errors.Unfall.Aktenzeichen && "input-error"
                 }
               />
             }
@@ -2999,7 +2494,7 @@ const Unfall = ({ onOpenModal }) => {
             name="Unfall.Aktenzeichen"
             id="Unfall.Aktenzeichen"
             rules={{
-              required: errorMessages.required,
+              required: errorMessages.required
             }}
           />
           {errors.Unfall && errors.Unfall.Aktenzeichen && (
@@ -3010,7 +2505,7 @@ const Unfall = ({ onOpenModal }) => {
         </Col>
       </Row>
       <Row>
-        <Col span={14}>
+        <Col xs={{ span: 24 }} md={{ span: 14}} >
           <p className="description-info">
             Vielen Dank, wenn Sie alle Pflichtfelder ausgefüllt haben klicken
             Sie unten um Schritt 2 abzuschließen.
@@ -3019,12 +2514,7 @@ const Unfall = ({ onOpenModal }) => {
       </Row>
       <Row>
         <Col xs={{ span: 24 }} md={{ span: 8, offset: 8 }}>
-          <input
-            name="id"
-            value={id}
-            type="hidden"
-            ref={register}
-          />
+          <input name="id" value={id} type="hidden" ref={register} />
           <Button
             htmlType="submit"
             style={{
